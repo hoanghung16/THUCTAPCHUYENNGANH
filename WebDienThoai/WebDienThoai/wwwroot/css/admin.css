@@ -1,0 +1,42 @@
+﻿body {
+    overflow-x: hidden; /* Ngăn cuộn ngang */
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    min-width: 250px;
+    max-width: 250px;
+    transition: margin 0.25s ease-out;
+}
+
+    #sidebar-wrapper .sidebar-heading {
+        padding: 0.875rem 1.25rem;
+        font-size: 1.2rem;
+    }
+
+    #sidebar-wrapper .list-group {
+        width: 100%;
+    }
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+/* CSS cho bảng sản phẩm (bạn có thể thêm vào đây)
+*/
+.product-thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* CSS cho nút toggle "Đang bán"
+  Bootstrap 5.3 đã có sẵn .form-switch, 
+  chúng ta chỉ cần đảm bảo nó căn giữa
+*/
+.form-switch .form-check-input {
+    min-height: 1.5rem;
+    min-width: 2.5rem;
+    margin-top: 0.25rem;
+}
