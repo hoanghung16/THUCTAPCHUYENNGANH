@@ -10263,11 +10263,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WEBAPP\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj",
+      "projectUniqueName": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj",
       "projectName": "WebDienThoai",
-      "projectPath": "D:\\WEBAPP\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj",
+      "projectPath": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\WEBAPP\\WebDienThoai\\WebDienThoai\\obj\\",
+      "outputPath": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
