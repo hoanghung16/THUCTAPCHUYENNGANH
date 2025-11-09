@@ -1,4 +1,4 @@
-﻿namespace WebDienThoai.Enums // Thay đổi
+﻿namespace WebDienThoai.Enums 
 {
     public enum ProductType
     {

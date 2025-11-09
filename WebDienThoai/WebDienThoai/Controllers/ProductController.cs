@@ -98,9 +98,9 @@ namespace WebDienThoai.Controllers
             Name = "AirPods Pro 2",
             Description = "Noise Cancellation",
             ImageUrl = "/img/14.jpg",
-            Price = 6190000m,        // Giá cũ
-            SalePrice = 5490000m,    // Giá mới
-            IsOnSale = true,         // Đang sale
+            Price = 6190000m,        
+            SalePrice = 5490000m,    
+            IsOnSale = true,         
             Category = "tainghe",
             Type = ProductType.Accessory
         },
@@ -144,10 +144,10 @@ namespace WebDienThoai.Controllers
             Type = ProductType.Accessory
         }
         };
-        // ===================================
+       
 
 
-        // Hiển thị trang chi tiết cho một sản phẩm
+       
         public IActionResult Detail(int id)
         {
             var product = _allProducts.FirstOrDefault(p => p.Id == id);
@@ -155,11 +155,10 @@ namespace WebDienThoai.Controllers
             {
                 return NotFound();
             }
-            return View(product); // Bạn sẽ cần tạo View "Detail.cshtml"
+            return View(product); 
         }
 
-        // GET: /Product/Accessories
-        // Hiển thị trang chứa tất cả phụ kiện
+       
         public IActionResult Accessories()
         {
             var accessories = _allProducts
@@ -170,8 +169,7 @@ namespace WebDienThoai.Controllers
             return View("Category", accessories); 
         }
 
-        // GET: /Product/Category/Apple
-        // Hiển thị trang chứa sản phẩm theo danh mục
+      
         public IActionResult Category(string categoryName)
         {
             if (string.IsNullOrEmpty(categoryName))
@@ -184,25 +182,24 @@ namespace WebDienThoai.Controllers
                                .ToList();
 
             ViewData["CategoryName"] = categoryName;
-            return View(products); // Bạn sẽ cần tạo View "Category.cshtml"
+            return View(products); 
         }
 
-        // GET: /Product/Sale
-        // (Tạm thời) Chuyển hướng đến trang phụ kiện khi nhấn "Sale"
+     
+       
         public IActionResult Sale()
         {
             var allProducts = _allProducts;
 
-            // 2. Lọc ra chỉ những sản phẩm có IsOnSale == true
+            
             var saleProducts = allProducts
                                 .Where(p => p.IsOnSale == true)
                                 .ToList();
 
-            // 3. Đặt tiêu đề (giống như bạn đã làm)
+            
             ViewData["Title"] = "Sản phẩm Khuyến Mãi";
 
-            // 4. Trả về View tên "Sale" và gửi danh sách đã lọc cho nó
-            // File Sale.cshtml của bạn sẽ nhận danh sách này
+            
             return View("Sale", saleProducts);
         }
     }
