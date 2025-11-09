@@ -60,42 +60,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ChuyenNganh/WebDienThoai/WebDienThoai/Views/Admin1/Blank.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW4xXEJsYW5rLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ChuyenNganh/WebDienThoai/WebDienThoai/Views/Admin1/Cards.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW4xXENhcmRzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ChuyenNganh/WebDienThoai/WebDienThoai/Views/Admin1/Chart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW4xXENoYXJ0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ChuyenNganh/WebDienThoai/WebDienThoai/Views/Admin1/Forget_Pass.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW4xXEZvcmdldF9QYXNzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ChuyenNganh/WebDienThoai/WebDienThoai/Views/Admin1/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW4xXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ChuyenNganh/WebDienThoai/WebDienThoai/Views/Admin1/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW4xXExvZ2luLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ChuyenNganh/WebDienThoai/WebDienThoai/Views/Admin1/Navbar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW4xXE5hdmJhci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ChuyenNganh/WebDienThoai/WebDienThoai/Views/Admin1/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW4xXFJlZ2lzdGVyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ChuyenNganh/WebDienThoai/WebDienThoai/Views/Admin1/Table.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW4xXFRhYmxlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/ChuyenNganh/WebDienThoai/WebDienThoai/Views/Home/ChinhSachBaoMat.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGluaFNhY2hCYW9NYXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -150,10 +114,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/ChuyenNganh/WebDienThoai/WebDienThoai/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ChuyenNganh/WebDienThoai/WebDienThoai/Views/Shared/_LayoutAdminDemo.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbkRlbW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ChuyenNganh/WebDienThoai/WebDienThoai/Views/_ViewImports.cshtml]

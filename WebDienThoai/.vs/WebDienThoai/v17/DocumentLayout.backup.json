@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\ChuyenNganh\\WebDienThoai\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{88B134AD-CE49-467B-9915-A1B2244F4347}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\areas\\admin\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{88B134AD-CE49-467B-9915-A1B2244F4347}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\areas\\admin\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88B134AD-CE49-467B-9915-A1B2244F4347}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{88B134AD-CE49-467B-9915-A1B2244F4347}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "WebDienThoai\\Areas\\Admin\\Views\\Admin\\Dashboard.cshtml",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Admin\\Dashboard.cshtml*",
+              "RelativeToolTip": "WebDienThoai\\Areas\\Admin\\Views\\Admin\\Dashboard.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-09T14:52:03.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "WebDienThoai\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "WebDienThoai\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-09T14:48:45.883Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
