@@ -15,7 +15,7 @@ namespace WebTHEKING.Controllers
         {
             new Product
         {
-            Id = 1,
+            Id = "1",
             Name = "iPhone 15 Pro",
             Description = "Titanium",
             ImageUrl = "/img/10.jpg",
@@ -29,7 +29,7 @@ namespace WebTHEKING.Controllers
         // SẢN PHẨM KHÔNG SALE
         new Product
         {
-            Id = 2,
+            Id = "2",
             Name = "Samsung S25",
             Description = "Advanced AI",
             ImageUrl = "/img/20.jpg",
@@ -42,7 +42,7 @@ namespace WebTHEKING.Controllers
 
         new Product
         {
-            Id = 3,
+            Id = "3",
             Name = "Iphone 13",
             Description = "Leica camera",
             ImageUrl = "/img/9.jpg",
@@ -56,7 +56,7 @@ namespace WebTHEKING.Controllers
         // SẢN PHẨM SALE
         new Product
         {
-            Id = 4,
+            Id = "4",
             Name = "iPhone 14",
             Description = "Camera cải tiến",
             ImageUrl = "/img/19.jpg",
@@ -68,7 +68,7 @@ namespace WebTHEKING.Controllers
         },
         new Product
         {
-            Id = 9, 
+            Id = "9", 
             Name = "iPhone 17",
             Description = "Tương lai là đây",
             ImageUrl = "/img/iphone-17.jpg", 
@@ -84,7 +84,7 @@ namespace WebTHEKING.Controllers
         // SẢN PHẨM SALE
         new Product
         {
-            Id = 5,
+            Id = "5",
             Name = "AirPods Pro 2",
             Description = "Noise Cancellation",
             ImageUrl = "/img/14.jpg",
@@ -97,7 +97,7 @@ namespace WebTHEKING.Controllers
 
         new Product
         {
-            Id = 6,
+            Id = "6",
             Name = "Ốp lưng Spigen",
             Description = "Bảo vệ toàn diện",
             ImageUrl = "/img/22.jpg",
@@ -110,7 +110,7 @@ namespace WebTHEKING.Controllers
 
         new Product
         {
-            Id = 7,
+            Id = "7",
             Name = "Cáp Type C Anker",
             Description = "Bền bỉ, sạc nhanh",
             ImageUrl = "/img/26.jpg",
@@ -123,7 +123,7 @@ namespace WebTHEKING.Controllers
 
         new Product
         {
-            Id = 8,
+            Id = "8",
             Name = "Ốp lưng iPhone 15",
             Description = "Trong suốt",
             ImageUrl = "/img/21.jpg",

@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebDienThoai.Enums;
+using WebDienThoai.Models;
 using WebDienThoai.ViewModels;
 
 namespace WebDienThoai.Areas.Admin.Controllers
@@ -51,6 +53,80 @@ namespace WebDienThoai.Areas.Admin.Controllers
         new UserViewModel { UserId = "u-003", FullName = "Trần Thị B", Email = "tranthib@gmail.com", Role = "Khách hàng", JoinDate = DateTime.Now.AddDays(-5) },
     };
             return View(userList); 
+        }
+        private List<Product> GetMockProducts()
+        {
+            var products = new List<Product>
+    {
+        
+        new Product
+        {
+            Id = "guid-1",
+            Name = "iPhone 15 Pro",
+            Description = "Titanium",
+            ImageUrl = "/img/10.jpg",
+            Price = 28990000m,       
+            SalePrice = 27590000m,   
+            IsOnSale = true,         
+            IsPublished = true,      
+            Category = "cat-apple",
+            Type = ProductType.Phone,
+            InventoryCount = 50      
+        },
+        
+        
+        new Product
+        {
+            Id = "guid-2",
+            Name = "Samsung S25",
+            Description = "Advanced AI",
+            ImageUrl = "/img/20.jpg",
+            Price = 27500000m,       
+            SalePrice = 27500000m,  
+            IsOnSale = false,       
+            IsPublished = true,     
+            Category = "cat-samsung",
+            Type = ProductType.Phone,
+            InventoryCount = 30      
+        },
+        
+        
+        new Product
+        {
+            Id = "guid-3",
+            Name = "Xiaomi 15",
+            Description = "Leica camera",
+            ImageUrl = "/img/17.jpg",
+            Price = 22990000m,       
+            SalePrice = 22990000m,  
+            IsOnSale = false,        
+            IsPublished = true,      
+            Category = "cat-xiaomi",
+            Type = ProductType.Phone,
+            InventoryCount = 0      
+        }
+    };
+
+            return products.OrderBy(p => p.Id).ToList();
+        }
+        public IActionResult Inventory()
+        {
+            ViewData["Title"] = "Quản lý Tồn kho";
+
+            
+            var allProducts = GetMockProducts();
+
+            
+            var inventoryList = allProducts.Select(p => new InventoryViewModel
+            {
+                Id = p.Id,
+                Name = p.Name,
+                ImageUrl = p.ImageUrl, 
+                StockQuantity = p.InventoryCount
+            }).ToList();
+
+            
+            return View(inventoryList); 
         }
     }
 }
