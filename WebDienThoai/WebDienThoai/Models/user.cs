@@ -13,8 +13,8 @@
     {
         public static List<user> Users = new List<user>
         {
-            new user { Username = "admin", Password = "123", Role = "Admin" },
-        new user { Username = "khach", Password = "123", Role = "Customer" }
+            new user { Username = "admin", Password = "123",FullName = "Quản Trị Viên", Role = "Admin" },
+        new user { Username = "khach", Password = "123",FullName = "Nguyễn Hoàng Hưng", Role = "Customer" }
         };
     }
 }

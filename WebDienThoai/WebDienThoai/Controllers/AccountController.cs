@@ -9,6 +9,10 @@ namespace WebDienThoai.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            if (HttpContext.Session.GetString("Username") != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
         [HttpPost]
@@ -23,6 +27,9 @@ namespace WebDienThoai.Controllers
                 .FirstOrDefault(u => u.Username == model.Username && u.Password == model.Password);
             if (user != null)
             {
+                HttpContext.Session.SetString("Username", user.Username);
+                HttpContext.Session.SetString("Role", user.Role);
+                HttpContext.Session.SetString("FullName", user.FullName);
                 if (user.Role == "Admin")
                 {
                     return RedirectToAction("Dashboard", "Admin", new {area = "Admin"});
@@ -35,8 +42,10 @@ namespace WebDienThoai.Controllers
             ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng.");
             return View("Login",model);
         }
+        [HttpGet]
         public IActionResult Logout()
         {
+            HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }
         public IActionResult Register()

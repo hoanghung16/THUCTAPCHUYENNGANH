@@ -770,3 +770,4 @@ D:\ChuyenNganh1\THUCTAPCHUYENNGANH\WebDienThoai\WebDienThoai\obj\Debug\net6.0\re
 D:\ChuyenNganh1\THUCTAPCHUYENNGANH\WebDienThoai\WebDienThoai\obj\Debug\net6.0\WebDienThoai.pdb
 D:\ChuyenNganh1\THUCTAPCHUYENNGANH\WebDienThoai\WebDienThoai\obj\Debug\net6.0\WebDienThoai.genruntimeconfig.cache
 D:\ChuyenNganh1\THUCTAPCHUYENNGANH\WebDienThoai\WebDienThoai\obj\Debug\net6.0\ref\WebDienThoai.dll
+D:\ChuyenNganh\WebDienThoai\WebDienThoai\obj\Debug\net6.0\WebDienThoai.sourcelink.json
