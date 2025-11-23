@@ -1,0 +1,60 @@
+﻿@using WebDienThoai.ViewModels
+@model List<InventoryViewModel>
+@{
+    ViewData["Title"] = "Quản lý Tồn kho";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h3>Tồn kho Sản phẩm</h3>
+    <a asp-action="CreatePurchaseOrder" class="btn btn-success">
+        <i class="bi bi-plus-circle me-1"></i> Tạo Phiếu Nhập Kho
+    </a>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped table-hover align-middle">
+            <thead>
+                <tr>
+                    <th style="width: 10%;">Ảnh</th>
+                    <th>Tên Sản phẩm</th>
+                    <th class="text-center" style="width: 15%;">Số lượng tồn</th>
+                    <th class="text-end" style="width: 20%;">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src="@(item.ImageUrl ?? "/img/placeholder.jpg")" alt="@item.Name" class="product-thumbnail">
+                        </td>
+                        <td>
+                            <strong>@item.Name</strong>
+                        </td>
+
+                        <td class="text-center">
+                            @if (item.StockQuantity == 0)
+                            {
+                                <span class="badge bg-danger fs-6">0 (Hết hàng)</span>
+                            }
+                            else
+                            {
+                                <span class="fs-5">@item.StockQuantity</span>
+                            }
+                        </td>
+
+                        <td class="text-end">
+                            <a href="#" class="btn btn-sm btn-outline-success">
+                                <i class="bi bi-plus-lg"></i> Nhập
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-warning">
+                                <i class="bi bi-dash-lg"></i> Xuất
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Web Bán Điện Thoại</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a asp-controller="Home" asp-action="Index" class="logo">THE KING</a>
+            <nav>
+                <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                <a asp-controller="Product" asp-action="Sale" class="sale">Sale</a>
+                <a asp-area="Admin" asp-controller="Admin" asp-action="Dashboard">Admin</a>
+                
+            </nav>
+            <div class="header-icons">
+                <div class="search-container">
+                </div>
+
+                <a asp-controller="Account" asp-action="Login">👤 Đăng nhập</a>
+                <a asp-controller="Product" asp-action="Carts">👜Giỏ Hàng</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+   
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>VỀ THE KING</h4>
+                    <ul>
+                        <li><a asp-controller="Home" asp-action="GioiThieu">Giới thiệu</a></li>
+                        <li><a asp-controller="Home" asp-action="HeThongCuaHang">Hệ thống cửa hàng</a></li>
+                        <li><a asp-controller="Home" asp-action="TuyenDung">Tuyển dụng</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                    <ul>
+                        <li><a asp-controller="Home" asp-action="FAQ">Câu hỏi thường gặp (FAQ)</a></li>
+                        <li><a asp-controller="Home" asp-action="ChinhSachVanChuyen">Chính sách vận chuyển</a></li>
+                        <li><a asp-controller="Home" asp-action="ChinhSachDoiTra">Chính sách đổi trả</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>THÔNG TIN PHÁP LÝ</h4>
+                    <ul>
+                        <li><a asp-controller="Home" asp-action="DieuKhoanDichVu">Điều khoản dịch vụ</a></li>
+                        <li><a asp-controller="Home" asp-action="ChinhSachBaoMat">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
+                    <p>Email: contact@webdienthoai.vn</p>
+                    <p>Hotline: 1900 5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; @DateTime.Now.Year WebDienThoai. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/index.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+    <a href="tel:19001234" class="floating-hotline">
+        📞 0898 521 356
+    </a>
+</body>
+</html>

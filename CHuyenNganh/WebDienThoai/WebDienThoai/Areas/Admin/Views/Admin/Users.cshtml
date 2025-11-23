@@ -1,0 +1,52 @@
+﻿@using WebDienThoai.ViewModels
+@model List<UserViewModel>
+@{
+    ViewData["Title"] = "Quản lý Người dùng";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="mb-0">Tất cả Người dùng</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Họ Tên</th>
+                    <th>Email</th>
+                    <th class="text-center">Vai Trò</th>
+                    <th>Ngày Tham Gia</th>
+                    <th class="text-end">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.UserId</td>
+                        <td>@user.FullName</td>
+                        <td>@user.Email</td>
+
+                        <td class="text-center">
+                            @if (user.Role == "Admin")
+                            {
+                                <span class="badge bg-primary">@user.Role</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">@user.Role</span>
+                            }
+                        </td>
+
+                        <td>@user.JoinDate.ToString("dd/MM/yyyy")</td>
+                        <td class="text-end">
+                            <a href="#" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil-square"></i> Sửa</a>
+                            <a href="#" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
