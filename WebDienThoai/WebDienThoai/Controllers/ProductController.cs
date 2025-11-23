@@ -132,7 +132,7 @@ namespace WebDienThoai.Controllers
             Type = ProductType.Accessory
         }
     };
-        // ===================================
+       
        
 
 
@@ -190,6 +190,10 @@ namespace WebDienThoai.Controllers
 
             
             return View("Sale", saleProducts);
+        }
+        public IActionResult Carts()
+        {
+            return View ();
         }
     }
 }

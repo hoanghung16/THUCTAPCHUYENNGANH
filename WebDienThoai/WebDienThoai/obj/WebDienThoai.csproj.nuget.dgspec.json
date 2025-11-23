@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj": {}
+    "D:\\ChuyenNganh1\\THUCTAPCHUYENNGANH\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj": {}
   },
   "projects": {
-    "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj": {
+    "D:\\ChuyenNganh1\\THUCTAPCHUYENNGANH\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj",
+        "projectUniqueName": "D:\\ChuyenNganh1\\THUCTAPCHUYENNGANH\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj",
         "projectName": "WebDienThoai",
-        "projectPath": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\obj\\",
+        "projectPath": "D:\\ChuyenNganh1\\THUCTAPCHUYENNGANH\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj",
+        "packagesPath": "C:\\Users\\weew3\\.nuget\\packages\\",
+        "outputPath": "D:\\ChuyenNganh1\\THUCTAPCHUYENNGANH\\WebDienThoai\\WebDienThoai\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\weew3\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

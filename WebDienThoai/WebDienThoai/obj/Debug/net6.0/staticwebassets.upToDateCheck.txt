@@ -23,6 +23,7 @@ wwwroot\img\9.jpg
 wwwroot\img\ip17.jpg
 wwwroot\img\iphone-17.jpg
 wwwroot\img\xiaomi17.jpg
+wwwroot\js\admin.js
 wwwroot\js\index.js
 wwwroot\js\phukien.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css

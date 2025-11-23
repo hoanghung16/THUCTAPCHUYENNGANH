@@ -1,29 +1,84 @@
-﻿body {
-    overflow-x: hidden; /* Ngăn cuộn ngang */
+﻿
+
+body {
+    overflow-x: hidden; 
+}
+
+
+#wrapper {
+    display: flex;
 }
 
 #sidebar-wrapper {
     min-height: 100vh;
-    min-width: 250px;
-    max-width: 250px;
+    width: 250px; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
     transition: margin 0.25s ease-out;
+    background-color: #343a40; 
 }
-
-    #sidebar-wrapper .sidebar-heading {
-        padding: 0.875rem 1.25rem;
-        font-size: 1.2rem;
-    }
-
-    #sidebar-wrapper .list-group {
-        width: 100%;
-    }
 
 #page-content-wrapper {
-    min-width: 100vw;
+    flex-grow: 1; 
+    width: 100%;
+    min-width: 0; 
+    padding-left: 250px; 
+    transition: padding 0.25s ease-out;
 }
 
-/* CSS cho bảng sản phẩm (bạn có thể thêm vào đây)
-*/
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: -250px; 
+}
+
+#wrapper.toggled #page-content-wrapper {
+    padding-left: 0; 
+}
+
+/* === Responsive cho Di động (dưới 768px) === */
+@media (max-width: 767.98px) {
+    
+    #sidebar-wrapper {
+        margin-left: -250px;
+    }
+
+    #page-content-wrapper {
+        padding-left: 0;
+    }
+
+    
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    
+    #menu-toggle {
+        display: block;
+    }
+}
+
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#sidebar-wrapper .list-group {
+    width: 100%;
+}
+
+.list-group-item-action.bg-dark.text-light:hover,
+.list-group-item-action.bg-dark.text-light:focus {
+    background-color: #495057 !important; 
+}
+
+
 .product-thumbnail {
     width: 60px;
     height: 60px;
@@ -31,10 +86,7 @@
     border-radius: 5px;
 }
 
-/* CSS cho nút toggle "Đang bán"
-  Bootstrap 5.3 đã có sẵn .form-switch, 
-  chúng ta chỉ cần đảm bảo nó căn giữa
-*/
+
 .form-switch .form-check-input {
     min-height: 1.5rem;
     min-width: 2.5rem;

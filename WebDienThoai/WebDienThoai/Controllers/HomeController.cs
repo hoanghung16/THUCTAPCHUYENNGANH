@@ -19,9 +19,9 @@ namespace WebTHEKING.Controllers
             Name = "iPhone 15 Pro",
             Description = "Titanium",
             ImageUrl = "/img/10.jpg",
-            Price = 28990000m,       // Giá cũ
-            SalePrice = 27590000m,   // Giá mới (giảm giá)
-            IsOnSale = true,         // Đang sale
+            Price = 28990000m,       
+            SalePrice = 27590000m,   
+            IsOnSale = true,         
             Category = "Apple",
             Type = ProductType.Phone
         },
@@ -33,9 +33,9 @@ namespace WebTHEKING.Controllers
             Name = "Samsung S25",
             Description = "Advanced AI",
             ImageUrl = "/img/20.jpg",
-            Price = 27500000m,       // Giá cũ
-            SalePrice = 27500000m,   // Giá mới (bằng giá cũ)
-            IsOnSale = false,        // Không sale
+            Price = 27500000m,       
+            SalePrice = 27500000m,   
+            IsOnSale = false,        
             Category = "Samsung",
             Type = ProductType.Phone
         },
@@ -209,5 +209,8 @@ namespace WebTHEKING.Controllers
             ViewData["Title"] = "Chính sách bảo mật";
             return View();
         }
+        
+
+
     }
 }

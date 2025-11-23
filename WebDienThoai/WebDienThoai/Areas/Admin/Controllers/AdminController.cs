@@ -87,7 +87,7 @@ namespace WebDienThoai.Areas.Admin.Controllers
             IsPublished = true,     
             Category = "cat-samsung",
             Type = ProductType.Phone,
-            InventoryCount = 30      
+            InventoryCount = 0      
         },
         
         
