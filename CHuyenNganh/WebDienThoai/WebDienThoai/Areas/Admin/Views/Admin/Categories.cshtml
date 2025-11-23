@@ -1,0 +1,46 @@
+﻿
+@using WebDienThoai.ViewModels
+@model List<CategoryViewModel>
+@{
+    
+    ViewData["Title"] = "Quản lý Danh mục";
+    
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h3>Tất cả Danh mục</h3>
+    <a asp-action="CreateCategory" class="btn btn-primary">
+        <i class="bi bi-plus-circle me-1"></i> Thêm danh mục mới
+    </a>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên Danh Mục</th>
+                    <th>Slug (Đường dẫn)</th>
+                    <th class="text-center">Số lượng sản phẩm</th>
+                    <th class="text-end">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var category in Model)
+                {
+                    <tr>
+                        <td>@category.Id</td>
+                        <td><strong>@category.Name</strong></td>
+                        <td>/danh-muc/@category.Slug</td>
+                        <td class="text-center">@category.ProductCount</td>
+                        <td class="text-end">
+                            <a href="#" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil-square"></i> Sửa</a>
+                            <a href="#" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

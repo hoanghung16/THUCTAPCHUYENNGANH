@@ -1,0 +1,68 @@
+﻿@model List<WebDienThoai.Models.Product>
+@{
+    ViewData["Title"] = $"Sản phẩm {ViewData["CategoryName"]}";
+}
+
+<main>
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">DANH MỤC: @ViewData["CategoryName"]</h2>
+
+            <div class="filter-bar">
+                <div class="filter-options">
+                    <span>Lọc theo:</span>
+                    <select id="category-filter" name="category">
+                        <option value="all">Tất cả</option>
+                        <option value="tainghe">Tai Nghe</option>
+                        <option value="oplung">Ốp Lưng</option>
+                        <option value="daysac">Dây Sạc</option>
+                    </select>
+                </div>
+                <div class="sort-options">
+                    <span>Sắp xếp:</span>
+                    <select id="sort-filter" name="sorting">
+                        <option value="default">Mặc định</option>
+                        <option value="price-asc">Giá tăng dần</option>
+                        <option value="price-desc">Giá giảm dần</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="product-grid" class="grid" style="grid-template-columns: repeat(3, 1fr);">
+                @if (Model.Any())
+                {
+                    @foreach (var product in Model)
+                    {
+                        <div class="product-card" data-category="@product.Category" data-price="@product.SalePrice">
+
+                            <a asp-controller="Product" asp-action="Detail" asp-route-id="@product.Id">
+                                <img src="@product.ImageUrl" alt="@product.Name">
+                            </a>
+                            <p class="product-name">@product.Name</p>
+
+                            @if (product.IsOnSale)
+                            {
+                                <div class="price-container">
+                                    <span class="original-price">@product.Price.ToString("N0")đ</span>
+                                    <span class="sale-price">@product.SalePrice.ToString("N0")đ</span>
+                                </div>
+                            }
+                            else
+                            {
+                                <p class="product-price">@product.SalePrice.ToString("N0")đ</p>
+                            }
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p class="text-center">Không tìm thấy sản phẩm nào thuộc danh mục này.</p>
+                }
+            </div>
+        </div>
+    </section>
+</main>
+
+@section Scripts {
+    <script src="~/js/phukien.js"></script>
+}
