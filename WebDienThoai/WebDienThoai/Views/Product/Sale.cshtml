@@ -1,0 +1,132 @@
+﻿@model IEnumerable<WebDienThoai.Models.Product>
+@{
+    ViewData["Title"] = "Săn Sale Giá Sốc";
+}
+
+<div class="sale-banner mb-5">
+    <div class="container text-center text-white py-5">
+        <h1 class="display-4 fw-bold text-uppercase">🔥 Flash Sale </h1>
+        <p class="lead mb-4">Săn ngay điện thoại chính hãng với giá ưu đãi lên đến 50%</p>
+        <div id="countdown" class="d-flex justify-content-center gap-3">
+        </div>
+    </div>
+</div>
+
+<main class="container pb-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-danger"><i class="bi bi-tags-fill me-2"></i>Đang Giảm Giá</h2>
+        <div class="dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Sắp xếp theo
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#price-asc">Giá thấp đến cao</a></li>
+                <li><a class="dropdown-item" href="#price-desc">Giá cao đến thấp</a></li>
+                <li><a class="dropdown-item" href="#discount-desc">Giảm nhiều nhất</a></li>
+            </ul>
+        </div>
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+            @foreach (var item in Model)
+            {
+                // Tính % giảm giá
+                decimal originalPrice = item.Price;
+                decimal salePrice = item.Saleprice ?? item.Price;
+                int discountPercent = 0;
+                if (originalPrice > 0)
+                {
+                    discountPercent = (int)Math.Round((1 - (salePrice / originalPrice)) * 100);
+                }
+
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card-hover position-relative">
+
+                        @if (discountPercent > 0)
+                        {
+                            <div class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1 m-2 rounded fw-bold z-1 shadow-sm">
+                                -@discountPercent%
+                            </div>
+                        }
+
+                        <div class="card-img-wrapper overflow-hidden bg-light p-3 text-center" style="height: 250px; display:flex; align-items:center; justify-content:center;">
+                            <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id">
+                                <img src="@item.ImageUrl" class="img-fluid" alt="@item.Name" style="max-height: 100%; object-fit: contain; transition: transform 0.3s ease;">
+                            </a>
+                        </div>
+
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-1">
+                                <span class="badge bg-secondary bg-opacity-10 text-secondary border">@item.Category?.Name</span>
+                            </div>
+
+                            <h5 class="card-title text-truncate mb-1">
+                                <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id" class="text-dark text-decoration-none stretched-link">
+                                    @item.Name
+                                </a>
+                            </h5>
+
+                            <div class="mt-auto">
+                                <div class="d-flex align-items-baseline gap-2">
+                                    <span class="text-danger fw-bold fs-5">@salePrice.ToString("N0")đ</span>
+                                    <span class="text-muted text-decoration-line-through small">@originalPrice.ToString("N0")đ</span>
+                                </div>
+
+                                <div class="mt-3 d-grid position-relative" style="z-index: 2;">
+                                    <form asp-controller="Cart" asp-action="AddToCart" method="post">
+                                        <input type="hidden" name="id" value="@item.Id" />
+                                        <button type="submit" class="btn btn-outline-danger w-100 btn-sm">
+                                            <i class="bi bi-cart-plus me-1"></i> Thêm vào giỏ
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="text-center py-5">
+            <img src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png" alt="No Sale" style="width: 150px; opacity: 0.5;">
+            <h3 class="mt-4 text-muted">Hiện chưa có chương trình khuyến mãi nào.</h3>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary mt-3">Quay về trang chủ</a>
+        </div>
+    }
+</main>
+@section Scripts {
+    <script src="~/js/sale.js"></script>
+}
+<style>
+    /* Banner Gradient đỏ cam rực rỡ */
+    .sale-banner {
+        background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+        border-bottom-left-radius: 50% 20px;
+        border-bottom-right-radius: 50% 20px;
+        box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3);
+    }
+
+    /* Hiệu ứng Card */
+    .product-card-hover {
+        transition: all 0.3s ease;
+    }
+
+        .product-card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+
+            /* Hiệu ứng Zoom ảnh */
+            .product-card-hover:hover img {
+                transform: scale(1.1);
+            }
+
+    /* Badge giảm giá */
+    .bg-danger {
+        background-color: #ff3b30 !important;
+    }
+</style>

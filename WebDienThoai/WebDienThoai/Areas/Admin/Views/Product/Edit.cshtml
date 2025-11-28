@@ -1,0 +1,82 @@
+﻿@model WebDienThoai.Models.Product
+@{
+    ViewData["Title"] = "Chỉnh sửa Sản phẩm";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-white py-3">
+        <h5 class="mb-0">Chỉnh sửa: @Model.Name</h5>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="mb-3">
+                        <label class="form-label">Tên sản phẩm</label>
+                        <input asp-for="Name" class="form-control" required />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Mô tả chi tiết</label>
+                        <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Giá gốc (VNĐ)</label>
+                            <input asp-for="Price" class="form-control" type="number" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-danger">Giá khuyến mãi (VNĐ)</label>
+                            <input asp-for="Saleprice" class="form-control" type="number" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label class="form-label">Danh mục</label>
+                        <select asp-for="Categoryid" class="form-select" asp-items="ViewBag.Categories"></select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Ảnh sản phẩm</label>
+                        <div class="mb-2 text-center border rounded p-2">
+                            <img src="@Model.ImageUrl" style="max-height: 150px; max-width: 100%;" />
+                        </div>
+                        <input type="file" name="imageFile" class="form-control" accept="image/*" />
+                        <small class="text-muted">Chỉ chọn nếu muốn thay đổi ảnh khác.</small>
+                    </div>
+
+                    <div class="card bg-light mt-3">
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold">Trạng thái</h6>
+
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" role="switch" asp-for="IsPublished">
+                                <label class="form-check-label fw-bold">Hiển thị trên Web</label>
+                                <small class="d-block text-muted" style="font-size: 0.8rem">Tắt để ẩn sản phẩm khỏi khách hàng.</small>
+                            </div>
+
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" asp-for="IsOnSale">
+                                <label class="form-check-label text-danger">Đang Giảm Giá</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-3 border-top pt-3 d-flex gap-2">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-save"></i> Cập nhật
+                </button>
+                <a asp-action="Products" class="btn btn-secondary">Hủy</a>
+            </div>
+        </form>
+        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+    </div>
+</div>

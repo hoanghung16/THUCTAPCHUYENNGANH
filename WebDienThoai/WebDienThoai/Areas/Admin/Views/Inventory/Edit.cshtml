@@ -1,0 +1,34 @@
+﻿@model WebDienThoai.Models.Inventory
+@{
+    ViewData["Title"] = "Cập nhật kho hàng";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white py-3">
+                <h5 class="mb-0">Nhập kho: @ViewBag.ProductName</h5>
+            </div>
+            <div class="card-body text-center">
+                <img src="@ViewBag.ProductImage" class="rounded mb-3 border" style="width: 100px; height: 100px; object-fit: cover;">
+
+                <form asp-action="Edit" method="post">
+                    <input type="hidden" name="ProductId" value="@Model.ProductId" />
+
+                    <div class="mb-4 text-start">
+                        <label class="form-label fw-bold">Số lượng tồn kho hiện tại</label>
+                        <input type="number" name="QuantityInStock" value="@Model.QuantityInStock" class="form-control form-control-lg" min="0" required />
+                        <small class="text-muted">Nhập số lượng thực tế đang có trong kho.</small>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success btn-lg">
+                            <i class="bi bi-save"></i> Cập nhật kho
+                        </button>
+                        <a asp-action="Inventory" class="btn btn-outline-secondary">Hủy bỏ</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
