@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\temp\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj": {}
+    "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj": {}
   },
   "projects": {
-    "D:\\temp\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj": {
+    "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\temp\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj",
+        "projectUniqueName": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj",
         "projectName": "WebDienThoai",
-        "projectPath": "D:\\temp\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj",
+        "projectPath": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\WebDienThoai.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\temp\\WebDienThoai\\WebDienThoai\\obj\\",
+        "outputPath": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

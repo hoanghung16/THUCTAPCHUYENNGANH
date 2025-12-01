@@ -4,31 +4,62 @@
 }
 
 <div class="row justify-content-center">
-    <div class="col-md-6">
-        <div class="card shadow-sm">
-            <div class="card-header bg-white py-3">
-                <h5 class="mb-0">Nhập kho: @ViewBag.ProductName</h5>
-            </div>
-            <div class="card-body text-center">
-                <img src="@ViewBag.ProductImage" class="rounded mb-3 border" style="width: 100px; height: 100px; object-fit: cover;">
+    <div class="col-md-6 col-lg-5">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="fw-bold text-success mb-0">NHẬP KHO SẢN PHẨM</h4>
+            <a asp-action="Inventory" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-arrow-left me-1"></i> Quay lại
+            </a>
+        </div>
+
+        <div class="card shadow border-0">
+            <div class="card-body p-4 text-center">
+
+                <div class="mb-4">
+                    <div class="position-relative d-inline-block">
+                        <img src="@(ViewBag.ProductImage ?? "/img/no-image.png")"
+                             class="rounded-3 shadow-sm border"
+                             style="width: 120px; height: 120px; object-fit: cover;">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
+                            #@Model.ProductId
+                        </span>
+                    </div>
+                    <h5 class="mt-3 fw-bold text-dark">@ViewBag.ProductName</h5>
+                </div>
+
+                <hr class="my-4 text-muted" style="opacity: 0.1">
 
                 <form asp-action="Edit" method="post">
-                    <input type="hidden" name="ProductId" value="@Model.ProductId" />
+                    <input type="hidden" asp-for="ProductId" />
 
                     <div class="mb-4 text-start">
-                        <label class="form-label fw-bold">Số lượng tồn kho hiện tại</label>
-                        <input type="number" name="QuantityInStock" value="@Model.QuantityInStock" class="form-control form-control-lg" min="0" required />
-                        <small class="text-muted">Nhập số lượng thực tế đang có trong kho.</small>
+                        <label asp-for="QuantityInStock" class="form-label fw-bold text-success">
+                            Số lượng tồn kho <span class="text-danger">*</span>
+                        </label>
+
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text bg-success bg-opacity-10 text-success border-success border-opacity-25">
+                                <i class="bi bi-box-seam"></i>
+                            </span>
+                            <input asp-for="QuantityInStock" class="form-control border-success border-opacity-25 fw-bold"
+                                   type="number" min="0" placeholder="0" />
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-1">
+                            <span asp-validation-for="QuantityInStock" class="text-danger small"></span>
+                            <small class="text-muted fst-italic">Nhập số lượng thực tế trong kho.</small>
+                        </div>
                     </div>
 
                     <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-success btn-lg">
-                            <i class="bi bi-save"></i> Cập nhật kho
+                        <button type="submit" class="btn btn-success btn-lg shadow-sm fw-bold">
+                            <i class="bi bi-check-circle-fill me-2"></i> LƯU CẬP NHẬT
                         </button>
-                        <a asp-action="Inventory" class="btn btn-outline-secondary">Hủy bỏ</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+

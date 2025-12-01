@@ -3,80 +3,119 @@
     ViewData["Title"] = "Chỉnh sửa Sản phẩm";
 }
 
-<div class="card shadow-sm">
-    <div class="card-header bg-white py-3">
-        <h5 class="mb-0">Chỉnh sửa: @Model.Name</h5>
-    </div>
-    <div class="card-body">
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="fw-bold text-primary">CẬP NHẬT SẢN PHẨM</h3>
+    <a asp-action="Products" class="btn btn-outline-secondary">
+        <i class="bi bi-arrow-left me-1"></i> Quay lại danh sách
+    </a>
+</div>
+
+<div class="card shadow-sm border-0">
+    <div class="card-body p-4">
         <form asp-action="Edit" method="post" enctype="multipart/form-data">
             <input type="hidden" asp-for="Id" />
 
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger d-none"></div>
+
             <div class="row">
-                <div class="col-md-8">
-                    <div class="mb-3">
-                        <label class="form-label">Tên sản phẩm</label>
-                        <input asp-for="Name" class="form-control" required />
-                        <span asp-validation-for="Name" class="text-danger"></span>
-                    </div>
+                <div class="col-lg-8 border-end">
+                    <h5 class="mb-3 text-muted text-uppercase small fw-bold">Thông tin chi tiết</h5>
 
                     <div class="mb-3">
-                        <label class="form-label">Mô tả chi tiết</label>
-                        <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                        <label asp-for="Name" class="form-label fw-bold">Tên sản phẩm <span class="text-danger">*</span></label>
+                        <input asp-for="Name" class="form-control form-control-lg" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Giá gốc (VNĐ)</label>
-                            <input asp-for="Price" class="form-control" type="number" />
+                            <label asp-for="Price" class="form-label fw-bold">Giá gốc</label>
+                            <div class="input-group">
+                                <input asp-for="Price" class="form-control" type="number" />
+                                <span class="input-group-text">₫</span>
+                            </div>
+                            <span asp-validation-for="Price" class="text-danger"></span>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label text-danger">Giá khuyến mãi (VNĐ)</label>
-                            <input asp-for="Saleprice" class="form-control" type="number" />
+                            <label asp-for="Saleprice" class="form-label fw-bold text-danger">Giá khuyến mãi</label>
+                            <div class="input-group">
+                                <input asp-for="Saleprice" class="form-control border-danger" type="number" />
+                                <span class="input-group-text text-danger">₫</span>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label fw-bold">Mô tả sản phẩm</label>
+                        <textarea asp-for="Description" class="form-control" rows="6"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-3 text-muted text-uppercase small fw-bold">Phân loại & Hình ảnh</h5>
+
                     <div class="mb-3">
-                        <label class="form-label">Danh mục</label>
+                        <label asp-for="Categoryid" class="form-label fw-bold">Danh mục</label>
                         <select asp-for="Categoryid" class="form-select" asp-items="ViewBag.Categories"></select>
+                        <span asp-validation-for="Categoryid" class="text-danger"></span>
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Ảnh sản phẩm</label>
-                        <div class="mb-2 text-center border rounded p-2">
-                            <img src="@Model.ImageUrl" style="max-height: 150px; max-width: 100%;" />
-                        </div>
-                        <input type="file" name="imageFile" class="form-control" accept="image/*" />
-                        <small class="text-muted">Chỉ chọn nếu muốn thay đổi ảnh khác.</small>
-                    </div>
-
-                    <div class="card bg-light mt-3">
+                    <div class="card bg-light border-0 mb-3">
                         <div class="card-body">
-                            <h6 class="card-title fw-bold">Trạng thái</h6>
+                            <label class="form-label fw-bold">Ảnh đại diện</label>
 
-                            <div class="form-check form-switch mb-3">
-                                <input class="form-check-input" type="checkbox" role="switch" asp-for="IsPublished">
-                                <label class="form-check-label fw-bold">Hiển thị trên Web</label>
-                                <small class="d-block text-muted" style="font-size: 0.8rem">Tắt để ẩn sản phẩm khỏi khách hàng.</small>
+                            <div class="text-center mb-3 p-2 bg-white rounded border">
+                                <img id="imgPreview" src="@(string.IsNullOrEmpty(Model.ImageUrl) ? "/img/no-image.png" : Model.ImageUrl)"
+                                     alt="Preview" class="img-fluid" style="max-height: 200px; object-fit: contain;">
+                            </div>
+
+                            <input type="file" name="imageFile" class="form-control" accept="image/*" onchange="previewImage(event)" />
+                            <small class="text-muted d-block mt-2">Chỉ chọn nếu muốn thay đổi ảnh.</small>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow-sm bg-body-tertiary">
+                        <div class="card-body">
+                            <h6 class="fw-bold mb-3">Cài đặt hiển thị</h6>
+
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" asp-for="IsPublished">
+                                <label class="form-check-label" asp-for="IsPublished">Hiển thị trên Web</label>
                             </div>
 
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" asp-for="IsOnSale">
-                                <label class="form-check-label text-danger">Đang Giảm Giá</label>
+                                <input class="form-check-input" type="checkbox" asp-for="IsOnSale">
+                                <label class="form-check-label text-danger" asp-for="IsOnSale">Đang chạy Sale</label>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="mt-3 border-top pt-3 d-flex gap-2">
-                <button type="submit" class="btn btn-primary">
-                    <i class="bi bi-save"></i> Cập nhật
+            <div class="d-flex justify-content-center gap-3 mt-4 border-top pt-4">
+                <a asp-action="Products" class="btn btn-secondary px-4">Hủy bỏ</a>
+                <button type="submit" class="btn btn-warning px-5 fw-bold shadow-sm text-dark">
+                    <i class="bi bi-check-lg me-1"></i> LƯU CẬP NHẬT
                 </button>
-                <a asp-action="Products" class="btn btn-secondary">Hủy</a>
             </div>
         </form>
-        <div asp-validation-summary="All" class="text-danger mb-3"></div>
     </div>
 </div>
+
+@section Scripts {
+   
+
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('imgPreview');
+                output.src = reader.result;
+            };
+            if(event.target.files[0]) {
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        }
+    </script>
+}
