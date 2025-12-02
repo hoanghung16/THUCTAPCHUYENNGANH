@@ -20,7 +20,7 @@ namespace WebDienThoai.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    slug = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: false)
+                    slug = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {

@@ -21,7 +21,6 @@ wwwroot\img\26.jpg
 wwwroot\img\27.jpg
 wwwroot\img\9.jpg
 wwwroot\img\a24604e6-08b4-418b-bfa3-4d854d7f042d_gộ.jpg
-wwwroot\img\d107f027-038a-4803-a571-7e829fd88025.jpg
 wwwroot\img\ip17.jpg
 wwwroot\img\iphone-17.jpg
 wwwroot\img\xiaomi17.jpg

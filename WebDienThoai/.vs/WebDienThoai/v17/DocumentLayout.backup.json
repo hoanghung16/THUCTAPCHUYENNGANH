@@ -3,8 +3,104 @@
   "WorkspaceRootPath": "D:\\ChuyenNganh\\WebDienThoai\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\models\\databasethekingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\models\\databasethekingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\viewmodels\\forgetpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\viewmodels\\forgetpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\views\\account\\forgetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\views\\account\\forgetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\models\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\models\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Migrations\\20251202091936_hung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebDienThoai\\Migrations\\20251202091936_hung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\areas\\admin\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\areas\\admin\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\areas\\admin\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\areas\\admin\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\areas\\admin\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\areas\\admin\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\areas\\admin\\views\\inventory\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\areas\\admin\\views\\inventory\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\areas\\admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\areas\\admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\areas\\admin\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\areas\\admin\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\areas\\admin\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\areas\\admin\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\areas\\admin\\views\\category\\categories.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\areas\\admin\\views\\category\\categories.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\areas\\admin\\views\\inventory\\inventory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\areas\\admin\\views\\inventory\\inventory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\areas\\admin\\views\\category\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\areas\\admin\\views\\category\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +110,331 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DatabaseTheKingContext.cs",
-              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Models\\DatabaseTheKingContext.cs",
-              "RelativeDocumentMoniker": "WebDienThoai\\Models\\DatabaseTheKingContext.cs",
-              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Models\\DatabaseTheKingContext.cs*",
-              "RelativeToolTip": "WebDienThoai\\Models\\DatabaseTheKingContext.cs*",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "WebDienThoai\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "WebDienThoai\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T11:33:53.462Z",
+              "WhenOpened": "2025-12-02T09:41:36.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ForgetPasswordViewModel.cs",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\ViewModels\\ForgetPasswordViewModel.cs",
+              "RelativeDocumentMoniker": "WebDienThoai\\ViewModels\\ForgetPasswordViewModel.cs",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\ViewModels\\ForgetPasswordViewModel.cs",
+              "RelativeToolTip": "WebDienThoai\\ViewModels\\ForgetPasswordViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T09:41:34.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\ViewModels\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "WebDienThoai\\ViewModels\\RegisterViewModel.cs",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\ViewModels\\RegisterViewModel.cs*",
+              "RelativeToolTip": "WebDienThoai\\ViewModels\\RegisterViewModel.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T09:41:12.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ForgetPassword.cshtml",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Views\\Account\\ForgetPassword.cshtml",
+              "RelativeDocumentMoniker": "WebDienThoai\\Views\\Account\\ForgetPassword.cshtml",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Views\\Account\\ForgetPassword.cshtml",
+              "RelativeToolTip": "WebDienThoai\\Views\\Account\\ForgetPassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T09:32:27.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "WebDienThoai\\Views\\Account\\Register.cshtml",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "WebDienThoai\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAuwDcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T09:40:00.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "WebDienThoai\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "WebDienThoai\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T09:32:14.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Models\\User.cs",
+              "RelativeDocumentMoniker": "WebDienThoai\\Models\\User.cs",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Models\\User.cs",
+              "RelativeToolTip": "WebDienThoai\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T09:31:44.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Models\\Inventory.cs",
+              "RelativeDocumentMoniker": "WebDienThoai\\Models\\Inventory.cs",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Models\\Inventory.cs",
+              "RelativeToolTip": "WebDienThoai\\Models\\Inventory.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T09:31:32.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "WebDienThoai\\Models\\Product.cs",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Models\\Product.cs",
+              "RelativeToolTip": "WebDienThoai\\Models\\Product.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAmwCEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T09:31:06.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "WebDienThoai\\Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "WebDienThoai\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T09:29:15.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20251202091936_hung.cs",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Migrations\\20251202091936_hung.cs",
+              "RelativeDocumentMoniker": "WebDienThoai\\Migrations\\20251202091936_hung.cs",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Migrations\\20251202091936_hung.cs",
+              "RelativeToolTip": "WebDienThoai\\Migrations\\20251202091936_hung.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T09:19:37.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "WebDienThoai\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "WebDienThoai\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAA4wBsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T09:14:28.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Order\\Details.cshtml",
+              "RelativeDocumentMoniker": "WebDienThoai\\Areas\\Admin\\Views\\Order\\Details.cshtml",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Order\\Details.cshtml",
+              "RelativeToolTip": "WebDienThoai\\Areas\\Admin\\Views\\Order\\Details.cshtml",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T09:14:09.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "WebDienThoai\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "WebDienThoai\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T09:13:35.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "InventoryController.cs",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Controllers\\InventoryController.cs",
+              "RelativeDocumentMoniker": "WebDienThoai\\Areas\\Admin\\Controllers\\InventoryController.cs",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Controllers\\InventoryController.cs",
+              "RelativeToolTip": "WebDienThoai\\Areas\\Admin\\Controllers\\InventoryController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T09:13:26.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "WebDienThoai\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "WebDienThoai\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwCYAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T09:11:19.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "WebDienThoai\\Models\\Category.cs",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Models\\Category.cs",
+              "RelativeToolTip": "WebDienThoai\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T09:08:06.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "WebDienThoai\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "WebDienThoai\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T09:04:36.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Product\\Edit.cshtml",
+              "RelativeDocumentMoniker": "WebDienThoai\\Areas\\Admin\\Views\\Product\\Edit.cshtml",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Product\\Edit.cshtml",
+              "RelativeToolTip": "WebDienThoai\\Areas\\Admin\\Views\\Product\\Edit.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAHYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T09:01:49.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "RelativeDocumentMoniker": "WebDienThoai\\Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "RelativeToolTip": "WebDienThoai\\Areas\\Admin\\Views\\Product\\Create.cshtml",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAAwHYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T09:00:10.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Inventory.cshtml",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Inventory\\Inventory.cshtml",
+              "RelativeDocumentMoniker": "WebDienThoai\\Areas\\Admin\\Views\\Inventory\\Inventory.cshtml",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Inventory\\Inventory.cshtml",
+              "RelativeToolTip": "WebDienThoai\\Areas\\Admin\\Views\\Inventory\\Inventory.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T08:59:56.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Inventory\\Edit.cshtml",
+              "RelativeDocumentMoniker": "WebDienThoai\\Areas\\Admin\\Views\\Inventory\\Edit.cshtml",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Inventory\\Edit.cshtml",
+              "RelativeToolTip": "WebDienThoai\\Areas\\Admin\\Views\\Inventory\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T08:58:39.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Category\\Edit.cshtml",
+              "RelativeDocumentMoniker": "WebDienThoai\\Areas\\Admin\\Views\\Category\\Edit.cshtml",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Category\\Edit.cshtml",
+              "RelativeToolTip": "WebDienThoai\\Areas\\Admin\\Views\\Category\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T08:58:22.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Category\\Create.cshtml",
+              "RelativeDocumentMoniker": "WebDienThoai\\Areas\\Admin\\Views\\Category\\Create.cshtml",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Category\\Create.cshtml",
+              "RelativeToolTip": "WebDienThoai\\Areas\\Admin\\Views\\Category\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T08:51:07.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Categories.cshtml",
+              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Category\\Categories.cshtml",
+              "RelativeDocumentMoniker": "WebDienThoai\\Areas\\Admin\\Views\\Category\\Categories.cshtml",
+              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Areas\\Admin\\Views\\Category\\Categories.cshtml",
+              "RelativeToolTip": "WebDienThoai\\Areas\\Admin\\Views\\Category\\Categories.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T08:50:53.215Z",
               "EditorCaption": ""
             }
           ]

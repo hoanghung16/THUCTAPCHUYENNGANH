@@ -18,7 +18,7 @@ namespace WebDienThoai.ViewModels
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "Vui lòng xác nhận mật khẩu")]
         [Compare("Password", ErrorMessage = "Mật khẩu xác nhận không khớp.")]
         public string ConfirmPassword { get; set; }
     }

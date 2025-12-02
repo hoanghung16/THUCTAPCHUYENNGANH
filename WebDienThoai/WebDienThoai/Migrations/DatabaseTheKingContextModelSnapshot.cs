@@ -38,7 +38,6 @@ namespace WebDienThoai.Migrations
                         .HasColumnName("name");
 
                     b.Property<string>("Slug")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .IsUnicode(false)
                         .HasColumnType("varchar(255)")

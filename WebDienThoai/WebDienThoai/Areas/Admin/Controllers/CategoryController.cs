@@ -36,7 +36,7 @@ namespace WebDienThoai.Areas.Admin.Controllers
 
                 context.Add(category);
                 await context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Categories));
             }
             return View(category);
         }

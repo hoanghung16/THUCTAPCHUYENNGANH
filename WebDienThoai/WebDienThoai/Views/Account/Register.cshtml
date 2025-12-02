@@ -8,36 +8,36 @@
         <form class="login-form" asp-controller="Account" asp-action="Register" method="post">
             <h2>Tạo Tài Khoản Mới</h2>
 
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3 text-center"></div>
 
             <div class="input-group">
-                <label asp-for="Username"></label>
-                <input asp-for="Username" class="form-control" placeholder="Nhập tên đăng nhập...">
-                <span asp-validation-for="Username" class="text-danger"></span>
+                <label asp-for="Username">Tên đăng nhập</label>
+                <input asp-for="Username" class="form-control" placeholder="Viết liền không dấu...">
+                <span asp-validation-for="Username" class="text-danger small" style="display:block; margin-top:5px;"></span>
             </div>
 
             <div class="input-group">
-                <label asp-for="FullName"></label>
-                <input asp-for="FullName" class="form-control" placeholder="Nhập họ và tên...">
-                <span asp-validation-for="FullName" class="text-danger"></span>
+                <label asp-for="FullName">Họ và Tên</label>
+                <input asp-for="FullName" class="form-control" placeholder="Ví dụ: Nguyễn Văn A">
+                <span asp-validation-for="FullName" class="text-danger small" style="display:block; margin-top:5px;"></span>
             </div>
 
             <div class="input-group">
-                <label asp-for="Email"></label>
-                <input asp-for="Email" class="form-control" placeholder="Nhập email...">
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <label asp-for="Email">Email</label>
+                <input asp-for="Email" class="form-control" placeholder="name@example.com">
+                <span asp-validation-for="Email" class="text-danger small" style="display:block; margin-top:5px;"></span>
             </div>
 
             <div class="input-group">
-                <label asp-for="Password"></label>
+                <label asp-for="Password">Mật khẩu</label>
                 <input asp-for="Password" type="password" class="form-control" placeholder="Nhập mật khẩu...">
-                <span asp-validation-for="Password" class="text-danger"></span>
+                <span asp-validation-for="Password" class="text-danger small" style="display:block; margin-top:5px;"></span>
             </div>
 
             <div class="input-group">
-                <label asp-for="ConfirmPassword"></label>
-                <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Xác nhận lại mật khẩu...">
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                <label asp-for="ConfirmPassword">Xác nhận mật khẩu</label>
+                <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Nhập lại mật khẩu...">
+                <span asp-validation-for="ConfirmPassword" class="text-danger small" style="display:block; margin-top:5px;"></span>
             </div>
 
             <button type="submit" class="cta-button">Đăng Ký</button>
@@ -48,3 +48,9 @@
         </form>
     </div>
 </main>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

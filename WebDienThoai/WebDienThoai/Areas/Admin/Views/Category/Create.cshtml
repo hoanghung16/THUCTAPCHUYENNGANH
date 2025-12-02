@@ -1,53 +1,32 @@
 ﻿@model WebDienThoai.Models.Category
 @{
-    ViewData["Title"] = "Thêm Danh mục mới";
+    ViewData["Title"] = "Thêm Danh mục";
 }
 
-<div class="row justify-content-center">
-    <div class="col-md-8 col-lg-6">
-        <div class="card shadow-sm border-0">
-            <div class="card-header bg-white py-3 border-bottom">
-                <h5 class="mb-0 fw-bold text-primary">
-                    <i class="bi bi-folder-plus me-2"></i>Thêm Danh mục
-                </h5>
-            </div>
-            <div class="card-body p-4">
-                <form asp-action="Create" method="post">
+<h2 class="mb-4">Thêm Danh mục mới</h2>
 
-                    <div asp-validation-summary="ModelOnly" class="alert alert-danger d-none" role="alert"></div>
+<form asp-action="Create" method="post" class="w-50">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-                    <div class="mb-3">
-                        <label asp-for="Name" class="form-label fw-semibold">Tên Danh mục <span class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <span class="input-group-text bg-light"><i class="bi bi-tag"></i></span>
-                            <input asp-for="Name" class="form-control" placeholder="Nhập tên danh mục..." />
-                        </div>
-                        <span asp-validation-for="Name" class="text-danger small"></span>
-                    </div>
-
-                    <div class="mb-4">
-                        <label asp-for="Slug" class="form-label fw-semibold">Slug (Đường dẫn)</label>
-                        <div class="input-group">
-                            <span class="input-group-text bg-light"><i class="bi bi-link-45deg"></i></span>
-                            <input asp-for="Slug" class="form-control" placeholder="Để trống tự động tạo..." />
-                        </div>
-                        <div class="form-text text-muted fst-italic">
-                            Đường dẫn URL sẽ tự động tạo từ tên nếu bạn để trống.
-                        </div>
-                        <span asp-validation-for="Slug" class="text-danger small"></span>
-                    </div>
-
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end pt-2 border-top">
-                        <a asp-action="Categories" class="btn btn-light me-md-2 text-secondary">
-                            <i class="bi bi-x-lg me-1"></i> Hủy
-                        </a>
-                        <button type="submit" class="btn btn-primary px-4 fw-bold">
-                            <i class="bi bi-save me-1"></i> Lưu lại
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label fw-bold"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
-</div>
 
+    <div class="mb-4">
+        <label asp-for="Slug" class="form-label fw-bold"></label>
+        <input asp-for="Slug" class="form-control" placeholder="Tự động tạo nếu để trống" />
+        <span asp-validation-for="Slug" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary me-2">Lưu lại</button>
+    <a asp-action="Categories" class="btn btn-link text-decoration-none">Hủy bỏ</a>
+
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -33,7 +33,7 @@ public partial class DatabaseTheKingContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // --- CẤU HÌNH BẢNG (Giữ nguyên) ---
+      
         modelBuilder.Entity<Category>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Category__3213E83FE65758FB");
@@ -124,9 +124,7 @@ public partial class DatabaseTheKingContext : DbContext
             entity.Property(e => e.Username).HasMaxLength(50).IsUnicode(false).HasColumnName("username");
         });
 
-        // =======================================================
-        // DATA SEEDING (DỮ LIỆU MẪU)
-        // =======================================================
+       
 
         // 1. Thêm Người dùng
         modelBuilder.Entity<User>().HasData(

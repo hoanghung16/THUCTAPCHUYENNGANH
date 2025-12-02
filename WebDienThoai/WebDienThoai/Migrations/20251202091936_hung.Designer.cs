@@ -12,7 +12,7 @@ using WebDienThoai.Models;
 namespace WebDienThoai.Migrations
 {
     [DbContext(typeof(DatabaseTheKingContext))]
-    [Migration("20251201113852_hung")]
+    [Migration("20251202091936_hung")]
     partial class hung
     {
         /// <inheritdoc />
@@ -41,7 +41,6 @@ namespace WebDienThoai.Migrations
                         .HasColumnName("name");
 
                     b.Property<string>("Slug")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .IsUnicode(false)
                         .HasColumnType("varchar(255)")

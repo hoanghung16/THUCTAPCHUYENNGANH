@@ -64,12 +64,10 @@
                     <div class="card bg-light border-0 mb-3">
                         <div class="card-body">
                             <label class="form-label fw-bold">Ảnh đại diện</label>
-
                             <div class="text-center mb-3 p-2 bg-white rounded border">
                                 <img id="imgPreview" src="@(string.IsNullOrEmpty(Model.ImageUrl) ? "/img/no-image.png" : Model.ImageUrl)"
                                      alt="Preview" class="img-fluid" style="max-height: 200px; object-fit: contain;">
                             </div>
-
                             <input type="file" name="imageFile" class="form-control" accept="image/*" onchange="previewImage(event)" />
                             <small class="text-muted d-block mt-2">Chỉ chọn nếu muốn thay đổi ảnh.</small>
                         </div>
@@ -78,12 +76,10 @@
                     <div class="card border-0 shadow-sm bg-body-tertiary">
                         <div class="card-body">
                             <h6 class="fw-bold mb-3">Cài đặt hiển thị</h6>
-
                             <div class="form-check form-switch mb-2">
                                 <input class="form-check-input" type="checkbox" asp-for="IsPublished">
                                 <label class="form-check-label" asp-for="IsPublished">Hiển thị trên Web</label>
                             </div>
-
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" asp-for="IsOnSale">
                                 <label class="form-check-label text-danger" asp-for="IsOnSale">Đang chạy Sale</label>
@@ -104,7 +100,9 @@
 </div>
 
 @section Scripts {
-   
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 
     <script>
         function previewImage(event) {
