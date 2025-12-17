@@ -35,6 +35,10 @@
                                 {
                                     <span class="badge bg-primary">Admin</span>
                                 }
+                                else if (user.Role == "PendingAdmin")
+                                {
+                                    <span class="badge bg-warning text-dark">Chờ duyệt Admin</span>
+                                }
                                 else
                                 {
                                     <span class="badge bg-secondary">Khách hàng</span>
@@ -42,6 +46,14 @@
                             </td>
 
                             <td class="text-end">
+                                @if (user.Role == "PendingAdmin")
+                                {
+                                    <a asp-action="ApproveUser" asp-route-id="@user.Id"
+                                       class="btn btn-sm btn-success mb-1">
+                                        <i class="bi bi-check-circle"></i> Duyệt
+                                    </a>
+                                }
+
                                 <a asp-action="Delete" asp-route-id="@user.Id" class="btn btn-sm btn-outline-danger"
                                    onclick="return confirm('Bạn có chắc chắn muốn xóa người dùng: @user.Username?');">
                                     <i class="bi bi-trash"></i> Xóa

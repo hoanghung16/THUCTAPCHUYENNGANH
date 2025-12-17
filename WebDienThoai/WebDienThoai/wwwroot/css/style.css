@@ -617,3 +617,104 @@ img {
     margin: 0;
     color: red;
 }
+/* ===================================================================
+   7. REGISTER & AUTH PAGES (THÊM MỚI)
+   =================================================================== */
+
+/* Khung chứa form đăng ký */
+.register-card {
+    max-width: 500px;
+    margin: 50px auto;
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--background-color);
+}
+
+/* Phần tiêu đề màu xanh gradient */
+.register-header {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* Hiệu ứng focus cho ô nhập liệu */
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+/* Nâng cấp nút bấm riêng cho form đăng ký (ghi đè style cũ) */
+.register-card .cta-button {
+    width: 50%; 
+    min-width: 200px;
+    display: block; 
+    margin: 20px auto 0;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(to right, #0d6efd, #0099ff);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+    margin-top: 10px;
+}
+
+    .register-card .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+        background: linear-gradient(to right, #0099ff, #0d6efd);
+    }
+
+/* Khung chọn loại tài khoản (Role) */
+.role-selection-box {
+    background-color: #f8f9fa;
+    border: 1px dashed #ced4da;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* Style cho badge (nhãn nhỏ) trong phần chọn role */
+.badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+}
+
+.bg-success {
+    background-color: #198754 !important;
+}
+
+.bg-warning {
+    background-color: #ffc107 !important;
+}
+
+.bg-primary {
+    background-color: #0d6efd !important;
+}
+
+.text-dark {
+    color: #212529 !important;
+}
+
+.rounded-pill {
+    border-radius: 50rem !important;
+}
+
+/* Icon Bootstrap đè lên nếu chưa load thư viện icon */
+.bi {
+    display: inline-block;
+    vertical-align: -.125em;
+    fill: currentColor;
+}

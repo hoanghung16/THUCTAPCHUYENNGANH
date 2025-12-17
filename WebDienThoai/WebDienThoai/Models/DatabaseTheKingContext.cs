@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace WebDienThoai.Models;
 
@@ -16,24 +18,29 @@ public partial class DatabaseTheKingContext : DbContext
     }
 
     public virtual DbSet<Category> Categories { get; set; }
-
     public virtual DbSet<Inventory> Inventories { get; set; }
-
     public virtual DbSet<Order> Orders { get; set; }
-
     public virtual DbSet<OrderItem> OrderItems { get; set; }
-
     public virtual DbSet<Product> Products { get; set; }
-
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source=HoangHung;Initial Catalog=DatabaseTheKing;Integrated Security=True;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=True");
+
+    // --- THÊM HÀM MÃ HÓA TẠI ĐÂY ---
+    private static string HashPassword(string password)
+    {
+        using (var sha256 = SHA256.Create())
+        {
+            var bytes = Encoding.UTF8.GetBytes(password);
+            var hash = sha256.ComputeHash(bytes);
+            return BitConverter.ToString(hash).Replace("-", "").ToLower();
+        }
+    }
+    // --------------------------------
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-      
         modelBuilder.Entity<Category>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Category__3213E83FE65758FB");
@@ -124,13 +131,35 @@ public partial class DatabaseTheKingContext : DbContext
             entity.Property(e => e.Username).HasMaxLength(50).IsUnicode(false).HasColumnName("username");
         });
 
-       
-
-        // 1. Thêm Người dùng
+        // 1. Thêm Người dùng (ĐÃ CẬP NHẬT MÃ HÓA)
         modelBuilder.Entity<User>().HasData(
-            new User { Id = 1, Username = "admin", Fullname = "Quản Trị Viên", Email = "admin@theking.vn", Passwordhash = "admin123", Role = "Admin" },
-            new User { Id = 2, Username = "khachhang", Fullname = "Nguyễn Văn A", Email = "khachhang@gmail.com", Passwordhash = "123456", Role = "Customer" },
-            new User { Id = 3, Username = "khachhang2", Fullname = "Trần Thị B", Email = "tranthib@gmail.com", Passwordhash = "123456", Role = "Customer" }
+            new User
+            {
+                Id = 1,
+                Username = "admin",
+                Fullname = "Quản Trị Viên",
+                Email = "admin@theking.vn",
+                Passwordhash = HashPassword("admin123"), // Mật khẩu gốc: admin123
+                Role = "Admin"
+            },
+            new User
+            {
+                Id = 2,
+                Username = "khachhang",
+                Fullname = "Nguyễn Văn A",
+                Email = "khachhang@gmail.com",
+                Passwordhash = HashPassword("123456"), // Mật khẩu gốc: 123456
+                Role = "Customer"
+            },
+            new User
+            {
+                Id = 3,
+                Username = "khachhang2",
+                Fullname = "Trần Thị B",
+                Email = "tranthib@gmail.com",
+                Passwordhash = HashPassword("123456"), // Mật khẩu gốc: 123456
+                Role = "Customer"
+            }
         );
 
         // 2. Thêm Danh mục

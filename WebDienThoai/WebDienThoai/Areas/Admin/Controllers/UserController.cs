@@ -13,13 +13,13 @@ namespace WebDienThoai.Areas.Admin.Controllers
             return View(users);
         }
 
-        // Xóa User
+      
         public async Task<IActionResult> Delete(int id)
         {
             var user = await context.Users.FindAsync(id);
             if (user != null)
             {
-                // Chỉ cho xóa nếu không phải Admin
+                
                 if (user.Role == "Admin")
                 {
                     TempData["Error"] = "Không thể xóa tài khoản Admin!";
@@ -31,6 +31,17 @@ namespace WebDienThoai.Areas.Admin.Controllers
                 }
             }
             return RedirectToAction(nameof(Users));
+        }
+        public async Task<IActionResult> ApproveUser(int id)
+        {
+            var user = await context.Users.FindAsync(id);
+            if (user != null && user.Role == "PendingAdmin")
+            {
+                
+                user.Role = "Admin";
+                await context.SaveChangesAsync();
+            }
+            return RedirectToAction("Users"); 
         }
     }
 }

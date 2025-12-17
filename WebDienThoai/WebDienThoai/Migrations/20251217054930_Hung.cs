@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WebDienThoai.Migrations
 {
     /// <inheritdoc />
-    public partial class hung : Migration
+    public partial class Hung : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,7 +34,7 @@ namespace WebDienThoai.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     username = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    fullname = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    fullname = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     email = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: false),
                     passwordhash = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: false),
                     role = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true, defaultValue: "Customer")
@@ -57,7 +57,7 @@ namespace WebDienThoai.Migrations
                     isOnSale = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
                     isPublished = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
                     imageUrl = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Description = table.Column<string>(type: "nvarchar(2000)", maxLength: 2000, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -99,7 +99,7 @@ namespace WebDienThoai.Migrations
                 columns: table => new
                 {
                     ProductId = table.Column<int>(type: "int", nullable: false),
-                    QuantityInStock = table.Column<int>(type: "int", nullable: true, defaultValue: 0)
+                    QuantityInStock = table.Column<int>(type: "int", nullable: false, defaultValue: 0)
                 },
                 constraints: table =>
                 {
@@ -154,9 +154,9 @@ namespace WebDienThoai.Migrations
                 columns: new[] { "id", "email", "fullname", "passwordhash", "role", "username" },
                 values: new object[,]
                 {
-                    { 1, "admin@theking.vn", "Quản Trị Viên", "admin123", "Admin", "admin" },
-                    { 2, "khachhang@gmail.com", "Nguyễn Văn A", "123456", "Customer", "khachhang" },
-                    { 3, "tranthib@gmail.com", "Trần Thị B", "123456", "Customer", "khachhang2" }
+                    { 1, "admin@theking.vn", "Quản Trị Viên", "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9", "Admin", "admin" },
+                    { 2, "khachhang@gmail.com", "Nguyễn Văn A", "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92", "Customer", "khachhang" },
+                    { 3, "tranthib@gmail.com", "Trần Thị B", "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92", "Customer", "khachhang2" }
                 });
 
             migrationBuilder.InsertData(

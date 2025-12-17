@@ -21,5 +21,7 @@ namespace WebDienThoai.ViewModels
         [Required(ErrorMessage = "Vui lòng xác nhận mật khẩu")]
         [Compare("Password", ErrorMessage = "Mật khẩu xác nhận không khớp.")]
         public string ConfirmPassword { get; set; }
+        [Required(ErrorMessage = "Vui lòng chọn loại tài khoản")]
+        public string SelectedRole { get; set; }
     }
 }

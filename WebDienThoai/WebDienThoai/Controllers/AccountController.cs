@@ -32,18 +32,19 @@ namespace WebDienThoai.Controllers
             {
                 return View("Login", model);
             }
-
-          
+            string passHash = HashPassword(model.Password);
             var user = await _context.Users
-                .FirstOrDefaultAsync(u => u.Username == model.Username && u.Passwordhash == model.Password);
-
+                .FirstOrDefaultAsync(u => u.Username == model.Username && u.Passwordhash == passHash);
             if (user != null)
-            {
-           
+            {               
+                if (user.Role == "PendingAdmin")
+                {
+                    ModelState.AddModelError("", "Tài khoản Admin này đang chờ duyệt, vui lòng quay lại sau.");
+                    return View("Login", model);
+                }             
                 HttpContext.Session.SetString("Username", user.Username);
-                HttpContext.Session.SetString("FullName", user.Fullname ?? "User"); 
-                HttpContext.Session.SetString("Role", user.Role ?? "Customer");
-
+                HttpContext.Session.SetString("FullName", user.Fullname ?? "User");
+                HttpContext.Session.SetString("Role", user.Role ?? "Customer");            
                 if (user.Role == "Admin")
                 {
                     return RedirectToAction("Dashboard", "Admin", new { area = "Admin" });
@@ -52,8 +53,7 @@ namespace WebDienThoai.Controllers
                 {
                     return RedirectToAction("Index", "Home", new { area = "" });
                 }
-            }
-
+            }      
             ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng.");
             return View("Login", model);
         }
@@ -66,7 +66,7 @@ namespace WebDienThoai.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        // --- ĐĂNG KÝ (Thêm mới để tạo user vào DB) ---
+        // --- ĐĂNG KÝ  ---
         [HttpGet]
         public IActionResult Register()
         {
@@ -79,31 +79,59 @@ namespace WebDienThoai.Controllers
             if (ModelState.IsValid)
             {
                 
-                var existingUser = await _context.Users
-                    .FirstOrDefaultAsync(u => u.Username == model.Username || u.Email == model.Email);
-
-                if (existingUser != null)
+                if (_context.Users.Any(u => u.Username == model.Username))
                 {
-                    ModelState.AddModelError("", "Tên đăng nhập hoặc Email đã tồn tại.");
+                    
+                    ModelState.AddModelError("Username", "Tên đăng nhập này đã được sử dụng.");
+                }
+
+                
+                if (_context.Users.Any(u => u.Email == model.Email))
+                {
+                    ModelState.AddModelError("Email", "Email này đã được đăng ký bởi tài khoản khác.");
+                }
+
+                
+                if (!ModelState.IsValid)
+                {
                     return View(model);
                 }
 
-                // Tạo user mới
-                var newUser = new User
+               
+                var user = new User
                 {
                     Username = model.Username,
                     Fullname = model.FullName,
                     Email = model.Email,
-                    Passwordhash = model.Password, 
-                    Role = "Customer" 
+                    Passwordhash = HashPassword(model.Password),
                 };
 
-                _context.Users.Add(newUser);
+                
+                if (model.SelectedRole == "Admin")
+                {
+                    user.Role = "PendingAdmin"; 
+                }
+                else
+                {
+                    user.Role = "Customer"; 
+                }
+
+                _context.Users.Add(user);
                 await _context.SaveChangesAsync();
 
-                TempData["SuccessMessage"] = "Đăng ký thành công! Vui lòng đăng nhập.";
-                return RedirectToAction("Login");
+                // Chuyển hướng
+                if (model.SelectedRole == "Admin")
+                {
+                    TempData["Message"] = "Đăng ký thành công! Vui lòng chờ Admin duyệt.";
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    TempData["Message"] = "Đăng ký thành công! Mời bạn đăng nhập.";
+                    return RedirectToAction("Login");
+                }
             }
+
             return View(model);
         }
 
@@ -111,5 +139,24 @@ namespace WebDienThoai.Controllers
         {
             return View();
         }
+        // Hàm băm mật khẩu sử dụng SHA256
+        private string HashPassword(string password)
+        {
+            if (string.IsNullOrEmpty(password))
+            {
+                return string.Empty;
+            }
+
+            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                
+                var bytes = System.Text.Encoding.UTF8.GetBytes(password);
+                
+                var hash = sha256.ComputeHash(bytes);
+               
+                return BitConverter.ToString(hash).Replace("-", "").ToLower();
+            }
+        }
+        
     }
 }

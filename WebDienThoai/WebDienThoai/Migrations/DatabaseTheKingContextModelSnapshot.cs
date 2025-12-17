@@ -99,6 +99,7 @@ namespace WebDienThoai.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("QuantityInStock")
+                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasDefaultValue(0);
@@ -310,7 +311,8 @@ namespace WebDienThoai.Migrations
                         .HasColumnName("categoryid");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
 
                     b.Property<string>("ImageUrl")
                         .HasMaxLength(500)
@@ -491,6 +493,7 @@ namespace WebDienThoai.Migrations
                         .HasColumnName("email");
 
                     b.Property<string>("Fullname")
+                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)")
                         .HasColumnName("fullname");
@@ -534,7 +537,7 @@ namespace WebDienThoai.Migrations
                             Id = 1,
                             Email = "admin@theking.vn",
                             Fullname = "Quản Trị Viên",
-                            Passwordhash = "admin123",
+                            Passwordhash = "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
                             Role = "Admin",
                             Username = "admin"
                         },
@@ -543,7 +546,7 @@ namespace WebDienThoai.Migrations
                             Id = 2,
                             Email = "khachhang@gmail.com",
                             Fullname = "Nguyễn Văn A",
-                            Passwordhash = "123456",
+                            Passwordhash = "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
                             Role = "Customer",
                             Username = "khachhang"
                         },
@@ -552,7 +555,7 @@ namespace WebDienThoai.Migrations
                             Id = 3,
                             Email = "tranthib@gmail.com",
                             Fullname = "Trần Thị B",
-                            Passwordhash = "123456",
+                            Passwordhash = "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
                             Role = "Customer",
                             Username = "khachhang2"
                         });
