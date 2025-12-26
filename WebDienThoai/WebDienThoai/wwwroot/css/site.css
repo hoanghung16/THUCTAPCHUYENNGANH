@@ -618,3 +618,6 @@ img {
 .newsletter {
     opacity: 0; /* Ẩn mặc định, JS sẽ bật lên sau */
 }
+.anim-item {
+    opacity: 0;
+}

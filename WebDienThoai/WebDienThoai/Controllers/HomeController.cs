@@ -2,12 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using WebDienThoai.Models;
 using WebDienThoai.ViewModels;
-using System.Text.Json; // [MỚI] Thư viện xử lý JSON
-using System.IO;        // [MỚI] Thư viện đọc file
+using System.Text.Json;
+using System.IO;       
 
 namespace WebDienThoai.Controllers
 {
-    // [CẬP NHẬT] Thêm 'IWebHostEnvironment env' vào Constructor
+   
     public class HomeController(DatabaseTheKingContext context, IWebHostEnvironment env) : Controller
     {
         public async Task<IActionResult> Index()

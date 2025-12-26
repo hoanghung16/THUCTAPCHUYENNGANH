@@ -1,21 +1,27 @@
 ﻿@{
     ViewData["Title"] = "Chính sách bảo mật";
 }
-
-<main>
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">@ViewData["Title"]</h2>
-            <div class="static-content">
-                <h3>1. Mục đích thu thập thông tin</h3>
-                <p>Chúng tôi thu thập thông tin (Tên, SĐT, Email, Địa chỉ) để xử lý đơn hàng và hỗ trợ khách hàng.</p>
-
-                <h3>2. Phạm vi sử dụng thông tin</h3>
-                <p>Chúng tôi chỉ sử dụng thông tin trong nội bộ công ty để giao hàng và gửi các chương trình khuyến mãi (nếu khách hàng đồng ý).</p>
-
-                <h3>3. Cam kết bảo mật</h3>
-                <p>WebDienThoai cam kết không bán, chia sẻ hay tiết lộ thông tin cá nhân của bạn cho bất kỳ bên thứ ba nào.</p>
-            </div>
+<div class="page-header py-5 text-center mb-5 anim-item" style="background-color: #333; color: white;">
+    <div class="container"><h1 class="display-5 fw-bold text-uppercase" style="color: var(--accent-color-1, #CDBEA7);">@ViewData["Title"]</h1></div>
+</div>
+<div class="container pb-5">
+    <div class="mx-auto bg-white p-5 shadow-sm rounded border anim-item" style="max-width: 900px;">
+        <div class="mb-4">
+            <h3 class="h5 fw-bold text-uppercase border-bottom pb-2 mb-3">1. Mục đích thu thập thông tin</h3>
+            <p class="text-secondary">Việc thu thập dữ liệu trên website bao gồm: email, điện thoại, tên đăng nhập, địa chỉ khách hàng. Đây là các thông tin mà The King cần thành viên cung cấp bắt buộc khi đăng ký sử dụng dịch vụ và để chúng tôi liên hệ xác nhận khi khách hàng đăng ký mua hàng nhằm đảm bảo quyền lợi cho cho người tiêu dùng.</p>
         </div>
-    </section>
-</main>
+        <div class="mb-4">
+            <h3 class="h5 fw-bold text-uppercase border-bottom pb-2 mb-3">2. Phạm vi sử dụng thông tin</h3>
+            <p class="text-secondary">Website sử dụng thông tin thành viên cung cấp để:</p>
+            <ul class="text-secondary">
+                <li>Cung cấp các dịch vụ đến thành viên.</li>
+                <li>Gửi các thông báo về các hoạt động trao đổi thông tin giữa thành viên và website.</li>
+                <li>Liên lạc và giải quyết với thành viên trong những trường hợp đặc biệt.</li>
+            </ul>
+        </div>
+        <div class="mb-0">
+            <h3 class="h5 fw-bold text-uppercase border-bottom pb-2 mb-3">3. Cam kết bảo mật</h3>
+            <p class="text-secondary">Thông tin cá nhân của thành viên trên The King được cam kết bảo mật tuyệt đối theo chính sách bảo vệ thông tin cá nhân của công ty. Việc thu thập và sử dụng thông tin của mỗi thành viên chỉ được thực hiện khi có sự đồng ý của khách hàng đó trừ những trường hợp pháp luật có quy định khác.</p>
+        </div>
+    </div>
+</div>

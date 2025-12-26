@@ -1,21 +1,26 @@
 ﻿@{
     ViewData["Title"] = "Điều khoản dịch vụ";
 }
-
-<main>
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">@ViewData["Title"]</h2>
-            <div class="static-content">
-                <h3>Điều 1: Chấp nhận điều khoản</h3>
-                <p>Khi truy cập và sử dụng website, bạn đồng ý tuân thủ các điều khoản và điều kiện này.</p>
-
-                <h3>Điều 2: Tài khoản người dùng</h3>
-                <p>Bạn chịu trách nhiệm bảo mật thông tin tài khoản và mật khẩu của mình...</p>
-
-                <h3>Điều 3: Quyền sở hữu trí tuệ</h3>
-                <p>Tất cả nội dung trên website này (logo, hình ảnh, văn bản) đều thuộc sở hữu của WebDienThoai.</p>
-            </div>
+<div class="page-header py-5 text-center mb-5 anim-item" style="background-color: #333; color: white;">
+    <div class="container"><h1 class="display-5 fw-bold text-uppercase" style="color: var(--accent-color-1, #CDBEA7);">@ViewData["Title"]</h1></div>
+</div>
+<div class="container pb-5">
+    <div class="mx-auto bg-white p-5 shadow-sm rounded border anim-item" style="max-width: 900px;">
+        <div class="mb-4">
+            <h3 class="h5 fw-bold text-uppercase border-bottom pb-2 mb-3">Điều 1: Giới thiệu</h3>
+            <p class="text-secondary">Chào mừng quý khách hàng đến với website The King. Khi quý khách truy cập vào trang web của chúng tôi có nghĩa là quý khách đồng ý với các điều khoản này.</p>
         </div>
-    </section>
-</main>
+        <div class="mb-4">
+            <h3 class="h5 fw-bold text-uppercase border-bottom pb-2 mb-3">Điều 2: Hướng dẫn sử dụng web</h3>
+            <p class="text-secondary">Khi vào web của chúng tôi, khách hàng phải đảm bảo đủ 18 tuổi, hoặc truy cập dưới sự giám sát của cha mẹ hay người giám hộ hợp pháp. Chúng tôi cấp giấy phép sử dụng để bạn có thể mua sắm trên web trong khuôn khổ các điều khoản và điều kiện sử dụng đã đề ra.</p>
+        </div>
+        <div class="mb-4">
+            <h3 class="h5 fw-bold text-uppercase border-bottom pb-2 mb-3">Điều 3: Thanh toán an toàn</h3>
+            <p class="text-secondary">Mọi khách hàng tham gia giao dịch tại The King qua thẻ tín dụng/thẻ ghi nợ/thẻ ATM nội địa đều được bảo mật thông tin bằng mã hóa. Bên cạnh đó, khi thực hiện thanh toán qua mạng, quý khách vui lòng lưu ý các chi tiết hướng dẫn để đảm bảo an toàn.</p>
+        </div>
+        <div class="mb-0">
+            <h3 class="h5 fw-bold text-uppercase border-bottom pb-2 mb-3">Điều 4: Quyền pháp lý</h3>
+            <p class="text-secondary">Các điều kiện, điều khoản và nội dung của trang web này được điều chỉnh bởi luật pháp Việt Nam và Tòa án có thẩm quyền tại Việt Nam sẽ giải quyết bất kỳ tranh chấp nào phát sinh từ việc sử dụng trái phép trang web này.</p>
+        </div>
+    </div>
+</div>

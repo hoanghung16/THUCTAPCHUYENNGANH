@@ -5,18 +5,30 @@
 <main>
     <section class="section">
         <div class="container">
-            <h2 class="section-title">@ViewData["Title"]</h2>
-            <div class="static-content">
-                <h3>1. Phạm vi giao hàng</h3>
-                <p>WebDienThoai hỗ trợ giao hàng trên toàn quốc.</p>
+            <h2 class="section-title anim-item">@ViewData["Title"]</h2>
 
-                <h3>2. Phí vận chuyển</h3>
-                <p>Miễn phí vận chuyển cho đơn hàng từ 1.000.000đ.</p>
-                <p>Đồng giá 25.000đ cho đơn hàng dưới 1.000.000đ (nội thành) và 35.000đ (ngoại thành).</p>
+            <div class="static-content mx-auto p-4 bg-white shadow-sm rounded border anim-item" style="max-width: 900px;">
 
-                <h3>3. Thời gian giao hàng</h3>
-                <p><strong>Nội thành (TP.HCM, Hà Nội):</strong> 1-2 ngày làm việc.</p>
-                <p><strong>Các tỉnh thành khác:</strong> 3-5 ngày làm việc (không tính T7, CN).</p>
+                <div class="mb-4 anim-item">
+                    <h3 class="h5 fw-bold text-uppercase text-dark border-bottom pb-2">1. Phạm vi giao hàng</h3>
+                    <p class="text-secondary">WebDienThoai hỗ trợ giao hàng trên toàn quốc thông qua các đối tác vận chuyển uy tín (GHTK, Viettel Post...).</p>
+                </div>
+
+                <div class="mb-4 anim-item">
+                    <h3 class="h5 fw-bold text-uppercase text-dark border-bottom pb-2">2. Phí vận chuyển</h3>
+                    <ul class="text-secondary">
+                        <li>Miễn phí vận chuyển cho đơn hàng từ <strong>1.000.000đ</strong>.</li>
+                        <li>Đồng giá <strong>25.000đ</strong> cho đơn hàng dưới 1 triệu (nội thành).</li>
+                        <li>Đồng giá <strong>35.000đ</strong> cho đơn hàng dưới 1 triệu (ngoại thành/tỉnh).</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4 anim-item">
+                    <h3 class="h5 fw-bold text-uppercase text-dark border-bottom pb-2">3. Thời gian giao hàng</h3>
+                    <p class="text-secondary"><strong>Nội thành (TP.HCM, Hà Nội):</strong> 1-2 ngày làm việc.</p>
+                    <p class="text-secondary"><strong>Các tỉnh thành khác:</strong> 3-5 ngày làm việc (không tính T7, CN, Lễ tết).</p>
+                </div>
+
             </div>
         </div>
     </section>

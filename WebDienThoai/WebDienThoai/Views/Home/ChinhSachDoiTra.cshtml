@@ -1,24 +1,32 @@
 ﻿@{
     ViewData["Title"] = "Chính sách đổi trả";
 }
-
-<main>
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">@ViewData["Title"]</h2>
-            <div class="static-content">
-                <h3>1. Điều kiện đổi trả</h3>
-                <p>Sản phẩm được đổi trả miễn phí trong <strong>7 ngày đầu</strong> nếu đáp ứng các điều kiện sau:</p>
-                <ul>
-                    <li>Sản phẩm có lỗi từ nhà sản xuất.</li>
-                    <li>Sản phẩm còn nguyên tem, mác, phụ kiện và hộp đựng.</li>
-                    <li>Có hóa đơn mua hàng tại WebDienThoai.</li>
-                </ul>
-
-                <h3>2. Trường hợp không được đổi trả</h3>
-                <p>Lỗi do người sử dụng (rơi vỡ, vào nước...).</p>
-                <p>Sản phẩm đã quá 7 ngày kể từ ngày nhận hàng.</p>
-            </div>
+<div class="page-header py-5 text-center mb-5 anim-item" style="background-color: #333; color: white;">
+    <div class="container"><h1 class="display-5 fw-bold text-uppercase" style="color: var(--accent-color-1, #CDBEA7);">@ViewData["Title"]</h1></div>
+</div>
+<div class="container pb-5">
+    <div class="mx-auto bg-white p-5 shadow-sm rounded border anim-item" style="max-width: 900px;">
+        <div class="alert alert-warning border-0 anim-item mb-4">
+            <i class="bi bi-info-circle-fill me-2"></i> Quý khách vui lòng kiểm tra kỹ hàng hóa ngay khi nhận hàng từ nhân viên giao nhận.
         </div>
-    </section>
-</main>
+        <div class="mb-4">
+            <h3 class="h5 fw-bold text-uppercase border-bottom pb-2 mb-3">1. Điều kiện đổi trả</h3>
+            <p class="text-secondary">Sản phẩm được chấp nhận đổi trả trong vòng <strong>30 ngày</strong> đầu tiên nếu đáp ứng đủ các điều kiện:</p>
+            <ul class="text-secondary">
+                <li>Sản phẩm bị lỗi kỹ thuật do nhà sản xuất (Màn hình, Pin, Main...).</li>
+                <li>Sản phẩm còn nguyên vẹn, không trầy xước, cấn móp, rơi vỡ, vào nước.</li>
+                <li>Còn đầy đủ hộp, phụ kiện và quà tặng đi kèm (nếu có).</li>
+                <li>Có phiếu bảo hành hoặc hóa đơn mua hàng tại The King.</li>
+            </ul>
+        </div>
+        <div class="mb-0">
+            <h3 class="h5 fw-bold text-uppercase border-bottom pb-2 mb-3">2. Quy trình thực hiện</h3>
+            <p class="text-secondary">
+                <strong>Bước 1:</strong> Liên hệ Hotline 1900 5678 để thông báo tình trạng lỗi.<br>
+                <strong>Bước 2:</strong> Mang máy đến cửa hàng gần nhất hoặc gửi chuyển phát nhanh về trung tâm bảo hành.<br>
+                <strong>Bước 3:</strong> Kỹ thuật viên kiểm tra và xác nhận lỗi.<br>
+                <strong>Bước 4:</strong> Thực hiện đổi máy mới hoặc hoàn tiền theo quy định.
+            </p>
+        </div>
+    </div>
+</div>

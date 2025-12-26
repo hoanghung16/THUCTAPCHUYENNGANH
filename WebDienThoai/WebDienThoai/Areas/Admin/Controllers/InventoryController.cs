@@ -21,7 +21,7 @@ namespace WebDienThoai.Areas.Admin.Controllers
         }
 
         // 2. CẬP NHẬT KHO (GET)
-        public async Task<IActionResult> Edit(int id) // id ở đây là ProductId
+        public async Task<IActionResult> Edit(int id) 
         {
             var product = await context.Products
                 .Include(p => p.Inventory)
