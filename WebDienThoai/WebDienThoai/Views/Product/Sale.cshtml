@@ -1,132 +1,209 @@
 ﻿@model IEnumerable<WebDienThoai.Models.Product>
 @{
     ViewData["Title"] = "Săn Sale Giá Sốc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="sale-banner mb-5">
-    <div class="container text-center text-white py-5">
-        <h1 class="display-4 fw-bold text-uppercase">🔥 Flash Sale </h1>
-        <p class="lead mb-4">Săn ngay điện thoại chính hãng với giá ưu đãi lên đến 50%</p>
-        <div id="countdown" class="d-flex justify-content-center gap-3">
-        </div>
+<section class="page-header">
+    <div class="container">
+        <h1>Ưu Đãi Đặc Biệt</h1>
+        <ul class="breadcrumb">
+            <li><a href="/">Trang chủ</a></li>
+            <li>Khuyến mãi</li>
+        </ul>
     </div>
-</div>
+</section>
 
-<main class="container pb-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="fw-bold text-danger"><i class="bi bi-tags-fill me-2"></i>Đang Giảm Giá</h2>
-        <div class="dropdown">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Sắp xếp theo
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#price-asc">Giá thấp đến cao</a></li>
-                <li><a class="dropdown-item" href="#price-desc">Giá cao đến thấp</a></li>
-                <li><a class="dropdown-item" href="#discount-desc">Giảm nhiều nhất</a></li>
-            </ul>
-        </div>
-    </div>
-
-    @if (Model != null && Model.Any())
-    {
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
-            @foreach (var item in Model)
-            {
-                // Tính % giảm giá
-                decimal originalPrice = item.Price;
-                decimal salePrice = item.Saleprice ?? item.Price;
-                int discountPercent = 0;
-                if (originalPrice > 0)
-                {
-                    discountPercent = (int)Math.Round((1 - (salePrice / originalPrice)) * 100);
-                }
-
-                <div class="col">
-                    <div class="card h-100 border-0 shadow-sm product-card-hover position-relative">
-
-                        @if (discountPercent > 0)
-                        {
-                            <div class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1 m-2 rounded fw-bold z-1 shadow-sm">
-                                -@discountPercent%
-                            </div>
-                        }
-
-                        <div class="card-img-wrapper overflow-hidden bg-light p-3 text-center" style="height: 250px; display:flex; align-items:center; justify-content:center;">
-                            <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id">
-                                <img src="@item.ImageUrl" class="img-fluid" alt="@item.Name" style="max-height: 100%; object-fit: contain; transition: transform 0.3s ease;">
-                            </a>
-                        </div>
-
-                        <div class="card-body d-flex flex-column">
-                            <div class="mb-1">
-                                <span class="badge bg-secondary bg-opacity-10 text-secondary border">@item.Category?.Name</span>
-                            </div>
-
-                            <h5 class="card-title text-truncate mb-1">
-                                <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id" class="text-dark text-decoration-none stretched-link">
-                                    @item.Name
-                                </a>
-                            </h5>
-
-                            <div class="mt-auto">
-                                <div class="d-flex align-items-baseline gap-2">
-                                    <span class="text-danger fw-bold fs-5">@salePrice.ToString("N0")đ</span>
-                                    <span class="text-muted text-decoration-line-through small">@originalPrice.ToString("N0")đ</span>
-                                </div>
-
-                                <div class="mt-3 d-grid position-relative" style="z-index: 2;">
-                                    <form asp-controller="Cart" asp-action="AddToCart" method="post">
-                                        <input type="hidden" name="id" value="@item.Id" />
-                                        <button type="submit" class="btn btn-outline-danger w-100 btn-sm">
-                                            <i class="bi bi-cart-plus me-1"></i> Thêm vào giỏ
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+<section class="flash-sale-section mb-5">
+    <div class="container">
+        <div class="flash-sale-banner">
+            <div class="content">
+                <h2>⚡ FLASH SALE ⚡</h2>
+                <p>Cơ hội sở hữu siêu phẩm với giá không tưởng. Kết thúc sau:</p>
+                <div id="countdown" class="countdown-timer">
+                    <div class="time-box">
+                        <span id="hours">00</span>
+                        <small>Giờ</small>
+                    </div>
+                    <div class="time-box">
+                        <span id="minutes">00</span>
+                        <small>Phút</small>
+                    </div>
+                    <div class="time-box">
+                        <span id="seconds">00</span>
+                        <small>Giây</small>
                     </div>
                 </div>
-            }
+            </div>
+            <div class="image">
+                <img src="~/img/10.jpg" alt="Flash Sale" style="opacity: 0.8; mix-blend-mode: luminosity;">
+            </div>
         </div>
-    }
-    else
-    {
-        <div class="text-center py-5">
-            <img src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png" alt="No Sale" style="width: 150px; opacity: 0.5;">
-            <h3 class="mt-4 text-muted">Hiện chưa có chương trình khuyến mãi nào.</h3>
-            <a asp-controller="Home" asp-action="Index" class="btn btn-primary mt-3">Quay về trang chủ</a>
+    </div>
+</section>
+
+<section class="section pt-0">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center mb-4 p-3 bg-light rounded shadow-sm">
+            <h4 class="m-0 fw-bold" style="color: var(--sale-color);">
+                <i class="bi bi-fire me-2"></i>Đang giảm giá (@(Model?.Count() ?? 0))
+            </h4>
+
+            <div class="d-flex align-items-center">
+                <label class="me-2 text-nowrap text-muted">Sắp xếp:</label>
+                <select id="sale-sort-select" class="form-select form-select-sm" style="width: 180px;">
+                    <option value="default">Mặc định</option>
+                    <option value="price-asc">Giá thấp đến cao</option>
+                    <option value="price-desc">Giá cao đến thấp</option>
+                    <option value="discount-desc">% Giảm nhiều nhất</option>
+                </select>
+            </div>
         </div>
-    }
-</main>
-@section Scripts {
-    <script src="~/js/sale.js"></script>
-}
+
+        @if (Model != null && Model.Any())
+        {
+            <div class="grid" id="sale-product-grid" style="grid-template-columns: repeat(4, 1fr); gap: 30px;">
+                @foreach (var item in Model)
+                {
+                    // Tính toán % giảm giá
+                    decimal original = item.Price;
+                    decimal sale = item.Saleprice ?? item.Price;
+                    int percent = 0;
+                    if (original > 0 && sale < original)
+                    {
+                        percent = (int)Math.Round((1 - (sale / original)) * 100);
+                    }
+
+                    <div class="product-card h-100 d-flex flex-column"
+                         style="background: #fff; border-radius: 8px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #eee;"
+                         data-price="@sale"
+                         data-discount="@percent">
+
+                        <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id" class="d-block text-center mb-3">
+                            <img src="@item.ImageUrl" alt="@item.Name" style="height: 200px; width: 100%; object-fit: contain;">
+                        </a>
+
+                        <p class="product-name fw-bold mb-2 text-dark" style="min-height: 48px;">
+                            @item.Name
+                        </p>
+
+                        <div class="price-container mb-3">
+                            <span class="text-muted text-decoration-line-through me-2 small">@original.ToString("N0")đ</span>
+                            <span class="text-danger fw-bold fs-5">@sale.ToString("N0")đ</span>
+                        </div>
+
+                        <div class="sale-badge" style="background-color: var(--sale-color); font-size: 13px;">
+                            -@percent%
+                        </div>
+
+                        <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id"
+                           class="btn w-100 mt-auto fw-bold text-uppercase py-2 cta-button"
+                           style="color: white; border: none;">
+                            Săn Ngay
+                        </a>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-5">
+                <img src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png" alt="No Sale" style="width: 100px; opacity: 0.5; margin-bottom: 20px;">
+                <h3 class="text-muted">Hiện chưa có chương trình khuyến mãi nào.</h3>
+                <a asp-controller="Home" asp-action="Index" class="cta-button mt-3">Quay về trang chủ</a>
+            </div>
+        }
+    </div>
+</section>
+
 <style>
-    /* Banner Gradient đỏ cam rực rỡ */
-    .sale-banner {
-        background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
-        border-bottom-left-radius: 50% 20px;
-        border-bottom-right-radius: 50% 20px;
-        box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3);
+    /* Flash Sale Banner */
+    .flash-sale-banner {
+        background-color: #222; /* Nền tối sang trọng */
+        border-radius: 12px;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        color: white;
+        margin-top: -30px; /* Đẩy lên đè nhẹ vào header nếu muốn */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
 
-    /* Hiệu ứng Card */
-    .product-card-hover {
-        transition: all 0.3s ease;
-    }
-
-        .product-card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        .flash-sale-banner .content {
+            padding: 40px;
+            flex: 1;
+            z-index: 2;
         }
 
-            /* Hiệu ứng Zoom ảnh */
-            .product-card-hover:hover img {
-                transform: scale(1.1);
+        .flash-sale-banner h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--accent-color-1); /* Màu vàng cát */
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .flash-sale-banner .image {
+            flex: 1;
+            background: linear-gradient(to right, #222, transparent); /* Fade ảnh vào nền */
+            position: relative;
+        }
+
+            .flash-sale-banner .image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
 
-    /* Badge giảm giá */
-    .bg-danger {
-        background-color: #ff3b30 !important;
+    /* Countdown Timer Style */
+    .countdown-timer {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+    .time-box {
+        background: rgba(255,255,255,0.1);
+        border: 1px solid var(--accent-color-1);
+        padding: 10px 15px;
+        border-radius: 8px;
+        text-align: center;
+        min-width: 80px;
+    }
+
+        .time-box span {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            line-height: 1;
+        }
+
+        .time-box small {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #aaa;
+        }
+
+    /* Responsive */
+    @@media (max-width: 768px) {
+        .flash-sale-banner {
+            flex-direction: column;
+        }
+
+            .flash-sale-banner .image {
+                height: 200px;
+                display: none;
+            }
+        /* Ẩn ảnh trên mobile */
+        .grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
     }
 </style>
+
+@section Scripts {
+    <script src="~/js/pages/sale.js"></script>
+}

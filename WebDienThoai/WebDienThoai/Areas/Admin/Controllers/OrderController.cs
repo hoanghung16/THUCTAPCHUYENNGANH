@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebDienThoai.Models;
 
 namespace WebDienThoai.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AdminAuth]
     public class OrderController(DatabaseTheKingContext context) : Controller
     {
         // 1. DANH SÁCH ĐƠN HÀNG

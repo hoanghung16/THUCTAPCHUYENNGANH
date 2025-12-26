@@ -12,14 +12,14 @@
                 <a asp-controller="Product" asp-action="Category" asp-route-categoryName="Apple" class="cta-button">Mua ngay</a>
             </div>
         </div>
-        <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('@Url.Content("~/img/27.jpg")');">
+        <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('@Url.Content("~/img/samsungbanner.png")');">
             <div class="slide-content">
                 <h1>SAMSUNG GALAXY S25 ULTRA</h1>
                 <p>Sức mạnh nhiếp ảnh trong tầm tay bạn.</p>
                 <a asp-controller="Product" asp-action="Category" asp-route-categoryName="Samsung" class="cta-button">Khám Phá</a>
             </div>
         </div>
-        <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('@Url.Content("~/img/1.jpg")');">
+        <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('@Url.Content("~/img/phukienbanner.jpg")');">
             <div class="slide-content">
                 <h1>PHỤ KIỆN CHÍNH HÃNG</h1>
                 <p>Ưu đãi đến 30% khi mua kèm điện thoại.</p>
@@ -70,7 +70,7 @@
     <div class="container">
         <h2 class="section-title">Iphone 17</h2>
         <div class="split-banner-container">
-            <a asp-controller="Product" asp-action="Detail" asp-route-id="9" class="split-banner">
+            <a asp-controller="Product" asp-action="Detail" asp-route-id="5" class="split-banner">
                 <img src="~/img/ip17.jpg" alt="Quảng cáo iPhone">
                 <div class="banner-text">
                     <h3>ĐÃ RA MẮT</h3>
@@ -150,13 +150,13 @@
 
 <section class="section" style="padding-top: 0;">
     <div class="container">
-        <h2 class="section-title">Xiaomi 17 Pro</h2>
+        <h2 class="section-title">Xiaomi 14 Ultra</h2>
         <div class="split-banner-container">
-            <a href="#" class="split-banner">
-                <img src="~/img/xiaomi17.jpg" alt="Quảng cáo iPhone">
+            <a asp-controller="Product" asp-action="Detail" asp-route-id="6" class="split-banner">
+                <img src="~/img/xiaomi17.jpg" alt="Quảng cáo Xiaomi">
                 <div class="banner-text">
-                    <h3>ĐÃ RA MẮT</h3>
-                    <p>Đột phá công nghệ Trung Hoa</p>
+                    <h3>HỢP TÁC CÙNG LEICA</h3>
+                    <p>Nhiếp ảnh đỉnh cao - Bắt trọn khoảnh khắc.</p>
                 </div>
             </a>
         </div>
@@ -200,3 +200,6 @@
         </div>
     </div>
 </section>
+@section Scripts {
+    <script src="~/js/pages/home.js"></script>
+}

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebDienThoai.Models;
@@ -6,6 +7,7 @@ using WebDienThoai.Models;
 namespace WebDienThoai.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AdminAuth]
     public class ProductController(DatabaseTheKingContext context, IWebHostEnvironment webHostEnvironment) : Controller
     {
         // 1. HIỂN THỊ DANH SÁCH

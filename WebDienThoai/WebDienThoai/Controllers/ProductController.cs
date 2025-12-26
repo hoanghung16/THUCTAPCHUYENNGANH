@@ -1,65 +1,157 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebDienThoai.Models;
+using WebDienThoai.ViewModels;
 
 namespace WebDienThoai.Controllers
 {
     public class ProductController(DatabaseTheKingContext context) : Controller
     {
-        // 1. CHI TIẾT SẢN PHẨM
+        
+        public async Task<IActionResult> Shop(int page = 1, string categorySlug = "all", string priceRange = "all", string sort = "default")
+        {
+            int pageSize = 9; 
+
+          
+            var query = context.Products
+                .Include(p => p.Category)
+                .Where(p => p.IsPublished == true)
+                .AsQueryable();
+
+          
+
+           
+            if (!string.IsNullOrEmpty(categorySlug) && categorySlug != "all")
+            {
+               
+                if (categorySlug == "phu-kien" || categorySlug == "Phụ Kiện")
+                {
+                   
+                    string[] phoneBrands = { "Apple", "Samsung", "Xiaomi", "Oppo", "Realme", "Vivo", "Iphone", "Sony", "Nokia", "Asus" };
+
+                   
+                    query = query.Where(p => !phoneBrands.Contains(p.Category.Name));
+                }
+                else
+                {
+                   
+                    query = query.Where(p => p.Category.Slug == categorySlug || p.Category.Name == categorySlug);
+                }
+            }
+
+            
+            switch (priceRange)
+            {
+                case "under-5":
+                    query = query.Where(p => (p.IsOnSale && p.Saleprice.HasValue ? p.Saleprice.Value : p.Price) < 5000000);
+                    break;
+                case "5-15":
+                    query = query.Where(p => (p.IsOnSale && p.Saleprice.HasValue ? p.Saleprice.Value : p.Price) >= 5000000
+                                          && (p.IsOnSale && p.Saleprice.HasValue ? p.Saleprice.Value : p.Price) <= 15000000);
+                    break;
+                case "15-25":
+                    query = query.Where(p => (p.IsOnSale && p.Saleprice.HasValue ? p.Saleprice.Value : p.Price) > 15000000
+                                          && (p.IsOnSale && p.Saleprice.HasValue ? p.Saleprice.Value : p.Price) <= 25000000);
+                    break;
+                case "over-25":
+                    query = query.Where(p => (p.IsOnSale && p.Saleprice.HasValue ? p.Saleprice.Value : p.Price) > 25000000);
+                    break;
+            }
+
+           
+            switch (sort)
+            {
+                case "price_asc":
+                    query = query.OrderBy(p => (p.IsOnSale && p.Saleprice.HasValue ? p.Saleprice.Value : p.Price));
+                    break;
+                case "price_desc":
+                    query = query.OrderByDescending(p => (p.IsOnSale && p.Saleprice.HasValue ? p.Saleprice.Value : p.Price));
+                    break;
+                case "name_asc":
+                    query = query.OrderBy(p => p.Name);
+                    break;
+                default: 
+                    query = query.OrderByDescending(p => p.Id);
+                    break;
+            }
+
+          
+
+           
+            int totalItems = await query.CountAsync();
+            int totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+
+            // Xử lý trang hợp lệ
+            if (page < 1) page = 1;
+            if (page > totalPages && totalPages > 0) page = totalPages;
+
+            // Lấy dữ liệu sản phẩm 
+            var products = await query
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            // Lấy danh mục cho Sidebar 
+            var categories = await context.Categories.ToListAsync();
+
+           
+            var viewModel = new ShopViewModel
+            {
+                Products = products,
+                Categories = categories,
+                CurrentPage = page,
+                TotalPages = totalPages,
+                CurrentCategory = categorySlug,
+                CurrentPriceRange = priceRange,
+                CurrentSort = sort
+            };
+
+            return View(viewModel);
+        }
+
+        // 2. CHI TIẾT SẢN PHẨM
         public async Task<IActionResult> Detail(int id)
         {
+           
             var product = await context.Products
                 .Include(p => p.Category)
-                
                 .FirstOrDefaultAsync(m => m.Id == id && m.IsPublished == true);
 
-            if (product == null)
-            {
-                return NotFound(); 
-            }
+            if (product == null) return NotFound();
+
+           
+            var relatedProducts = await context.Products
+                .Where(p => p.Category.Id == product.Category.Id && p.Id != id && p.IsPublished == true)
+                .OrderBy(r => Guid.NewGuid()) 
+                .Take(4) 
+                .ToListAsync();
+
+            
+            ViewBag.RelatedProducts = relatedProducts;
 
             return View(product);
         }
 
-        // 2. TRANG PHỤ KIỆN
-        public async Task<IActionResult> Accessories()
-        {
-            var accessories = await context.Products
-                .Include(p => p.Category)
-                .Where(p => p.IsPublished == true)
-                .Where(p => p.Category.Name == "Phụ Kiện" ||
-                            p.Category.Name == "Tai Nghe" ||
-                            p.Category.Name == "Ốp Lưng" ||
-                            p.Category.Name == "Dây Sạc")
-                .ToListAsync();
+        // 3. CÁC ACTION REDIRECT 
 
-            ViewData["CategoryName"] = "Phụ Kiện Chính Hãng";
-            return View("Category", accessories);
+        public IActionResult Category(string categoryName)
+        {
+            return RedirectToAction("Shop", new { categorySlug = categoryName });
         }
 
-        // 3. TRANG DANH MỤC (Apple, Samsung...)
-        public async Task<IActionResult> Category(string categoryName)
+        public IActionResult Accessories()
         {
-            if (string.IsNullOrEmpty(categoryName)) return NotFound();
-
-            var products = await context.Products
-                .Include(p => p.Category)
-                .Where(p => p.IsPublished == true) 
-                .Where(p => p.Category.Name == categoryName || p.Category.Slug == categoryName)
-                .ToListAsync();
-
-            ViewData["CategoryName"] = categoryName;
-            return View(products);
+           
+            return RedirectToAction("Shop", new { categorySlug = "phu-kien" });
         }
 
-        // 4. TRANG SALE
         public async Task<IActionResult> Sale()
         {
+            
+            
             var saleProducts = await context.Products
                 .Include(p => p.Category)
-                .Where(p => p.IsPublished == true)
-                .Where(p => p.IsOnSale == true)  
+                .Where(p => p.IsPublished == true && p.IsOnSale == true)
                 .ToListAsync();
 
             ViewData["Title"] = "Sản phẩm Khuyến Mãi";

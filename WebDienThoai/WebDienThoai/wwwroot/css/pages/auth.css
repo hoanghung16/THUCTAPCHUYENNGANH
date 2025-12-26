@@ -1,0 +1,130 @@
+﻿/* ===================================================================
+   GIAO DIỆN XÁC THỰC (LOGIN / REGISTER / FORGOT PASSWORD)
+   Theme: THE KING (Black & Gold)
+   =================================================================== */
+
+/* Container bao quanh */
+.auth-container {
+    min-height: 85vh; /* Cao gần hết màn hình */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa; /* Màu nền xám rất nhạt */
+    padding: 40px 15px;
+    background-image: url('/img/pattern.png'); /* Nếu có ảnh nền mờ thì tốt */
+}
+
+/* Thẻ Card chính */
+.auth-card {
+    background: white;
+    width: 100%;
+    max-width: 500px; /* Độ rộng tối đa */
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1); /* Đổ bóng mềm */
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+    .auth-card:hover {
+        transform: translateY(-5px); /* Bay lên nhẹ khi hover */
+    }
+
+/* Phần Header của Card (Màu đen) */
+.auth-header {
+    background-color: var(--primary-color, #333);
+    padding: 40px 30px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+    /* Mũi tên trang trí dưới header */
+    .auth-header::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        width: 20px;
+        height: 20px;
+        background-color: var(--primary-color, #333);
+    }
+
+    .auth-header h2 {
+        color: var(--accent-color-1, #CDBEA7); /* Màu vàng cát */
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        font-size: 28px;
+    }
+
+    .auth-header p {
+        color: rgba(255,255,255,0.7);
+        font-size: 14px;
+        margin: 0;
+    }
+
+/* Phần Body của Card */
+.auth-body {
+    padding: 40px;
+}
+
+/* Input Fields - Tùy chỉnh ô nhập liệu */
+.input-group-text {
+    background-color: #fff;
+    border-right: none;
+    color: #999;
+    border-color: #ced4da;
+}
+
+.form-control {
+    border-left: none;
+    padding-left: 0;
+    border-color: #ced4da;
+    box-shadow: none !important; /* Bỏ shadow mặc định của Bootstrap */
+}
+
+/* Hiệu ứng khi bấm vào ô nhập liệu */
+.input-group:focus-within .input-group-text,
+.input-group:focus-within .form-control {
+    border-color: var(--accent-color-1, #CDBEA7);
+    color: #333;
+}
+
+    .input-group:focus-within .input-group-text i {
+        color: var(--accent-color-1, #CDBEA7); /* Icon chuyển màu vàng */
+    }
+
+/* Link liên kết (Quên mật khẩu, Đăng ký...) */
+.auth-link {
+    color: #666;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+    .auth-link:hover {
+        color: var(--accent-color-1, #CDBEA7);
+    }
+
+/* Radio Button chọn vai trò (Trang đăng ký) */
+.role-option {
+    border: 1px solid #eee;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+    .role-option:hover {
+        background-color: #f9f9f9;
+        border-color: #ddd;
+    }
+
+.form-check-input:checked {
+    background-color: var(--accent-color-1, #CDBEA7);
+    border-color: var(--accent-color-1, #CDBEA7);
+}

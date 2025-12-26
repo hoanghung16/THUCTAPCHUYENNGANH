@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 using WebDienThoai.Models;
@@ -7,8 +8,12 @@ using WebDienThoai.ViewModels;
 namespace WebDienThoai.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AdminAuth]
+    [Route("Admin")]
     public class AdminController(DatabaseTheKingContext context) : Controller
     {
+        [Route("")]
+        [Route("Dashboard")]
         public async Task<IActionResult> Dashboard()
         {
             var today = DateTime.Now;

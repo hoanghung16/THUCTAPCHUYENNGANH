@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebDienThoai.Models;
 
 namespace WebDienThoai.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AdminAuth]
     public class UserController(DatabaseTheKingContext context) : Controller
     {
         public async Task<IActionResult> Users()

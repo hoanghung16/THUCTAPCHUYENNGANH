@@ -1,22 +1,86 @@
 ﻿@{
-    ViewData["Title"] = "Giới thiệu";
+    ViewData["Title"] = "Về Chúng Tôi";
 }
 
-<main>
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">@ViewData["Title"]</h2>
-            <div class="static-content">
-                <p>Chào mừng bạn đến với <strong>WebDienThoai</strong>!</p>
-                <p>Chúng tôi tự hào là một trong những đơn vị hàng đầu cung cấp các sản phẩm công nghệ, điện thoại di động chính hãng tại Việt Nam. Được thành lập từ năm 2025, sứ mệnh của chúng tôi là mang đến cho khách hàng những sản phẩm chất lượng cao với mức giá cạnh tranh nhất và dịch vụ hậu mãi tuyệt vời.</p>
+@section Styles {
+    <link rel="stylesheet" href="~/css/pages/about.css" />
+}
 
-                <h3>Giá trị cốt lõi</h3>
-                <ul>
-                    <li><strong>Chất lượng:</strong> Cam kết 100% sản phẩm chính hãng.</li>
-                    <li><strong>Khách hàng:</strong> Lấy sự hài lòng của khách hàng làm trọng tâm.</li>
-                    <li><strong>Uy tín:</strong> Xây dựng niềm tin bằng sự minh bạch và chuyên nghiệp.</li>
-                </ul>
+<section class="page-header" style="background-color: #222; color: white; padding: 40px 0; text-align: center;">
+    <div class="container">
+        <h1 class="header-anim" style="margin: 0; font-size: 32px; text-transform: uppercase;">Về Chúng Tôi</h1>
+        <ul class="breadcrumb header-anim" style="justify-content: center; margin-top: 10px;">
+            <li><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+            <li>Giới thiệu</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="~/img/13.jpg" alt="Showroom The King" style="border-radius: 10px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); width: 100%; height: auto; display: block;">
+            </div>
+
+            <div class="about-content">
+                <h4 style="color: #999; margin-bottom: 5px; text-transform: uppercase; font-size: 14px; letter-spacing: 2px;">Câu chuyện của chúng tôi</h4>
+                <h2 style="color: #333; margin-top: 0; margin-bottom: 20px; font-size: 32px;">THE KING - ĐỈNH CAO CÔNG NGHỆ</h2>
+
+                <p style="color: #555; margin-bottom: 15px;">Chào mừng bạn đến với <strong>THE KING</strong>. Được thành lập với sứ mệnh đơn giản nhưng đầy tham vọng: mang những tinh hoa công nghệ thế giới đến tận tay người dùng Việt Nam.</p>
+                <p style="color: #555;">Chúng tôi hiểu rằng, điện thoại không chỉ là công cụ liên lạc, mà là người bạn đồng hành, là phong cách sống. Vì thế, mỗi sản phẩm tại THE KING đều được tuyển chọn kỹ lưỡng, cam kết chính hãng 100%.</p>
+
+                <div class="stats-box">
+                    <div>
+                        <strong data-target="2020">0</strong>
+                        <span>Năm thành lập</span>
+                    </div>
+                    <div>
+                        <strong data-target="10">0</strong>
+                        <span>Ngàn Khách hàng</span>
+                    </div>
+                    <div>
+                        <strong data-target="100">0</strong>
+                        <span>% Chính hãng</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-</main>
+    </div>
+</section>
+
+<section class="section" style="background-color: #F9F9F9;">
+    <div class="container">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">Hành Trình Phát Triển</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>2020: Khởi Đầu</h3>
+                    <p>Cửa hàng đầu tiên được khai trương tại TP.HCM. Bắt đầu hành trình chinh phục niềm tin khách hàng bằng sự tận tâm.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>2023: Mở Rộng Quy Mô</h3>
+                    <p>Trở thành đối tác chiến lược của Apple và Samsung. Mở rộng hệ thống bán hàng đa kênh trên toàn quốc.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>2025: Kỷ Nguyên Số</h3>
+                    <p>Ra mắt Website thương mại điện tử "THE KING", tích hợp thanh toán bảo mật và giao hàng hỏa tốc 2H.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/pages/about.js"></script>
+}

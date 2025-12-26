@@ -1,16 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebDienThoai.Models;
 
 namespace WebDienThoai.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AdminAuth]
     public class CategoryController(DatabaseTheKingContext context) : Controller
     {
         // 1. HIỂN THỊ DANH SÁCH
         public async Task<IActionResult> Categories()
         {
-            var categories = await context.Categories.ToListAsync();
+            var categories = await context.Categories.Include(c => c.Products).ToListAsync();
             return View(categories);
         }
 
