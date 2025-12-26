@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebDienThoai")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80ea670d38a94b7469532a4750285752c04e6c55")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8aa7684852ccadd83e9a14d26eab2ce55920964d")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebDienThoai")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebDienThoai")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

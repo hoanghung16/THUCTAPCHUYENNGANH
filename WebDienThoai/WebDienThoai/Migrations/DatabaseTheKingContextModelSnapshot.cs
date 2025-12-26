@@ -31,6 +31,9 @@ namespace WebDienThoai.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("IsVisible")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -52,42 +55,49 @@ namespace WebDienThoai.Migrations
                         new
                         {
                             Id = 1,
+                            IsVisible = true,
                             Name = "Apple",
                             Slug = "apple"
                         },
                         new
                         {
                             Id = 2,
+                            IsVisible = true,
                             Name = "Samsung",
                             Slug = "samsung"
                         },
                         new
                         {
                             Id = 3,
+                            IsVisible = true,
                             Name = "Xiaomi",
                             Slug = "xiaomi"
                         },
                         new
                         {
                             Id = 4,
+                            IsVisible = true,
                             Name = "Phụ Kiện",
                             Slug = "phu-kien"
                         },
                         new
                         {
                             Id = 5,
+                            IsVisible = true,
                             Name = "Tai Nghe",
                             Slug = "tai-nghe"
                         },
                         new
                         {
                             Id = 6,
+                            IsVisible = true,
                             Name = "Ốp Lưng",
                             Slug = "op-lung"
                         },
                         new
                         {
                             Id = 7,
+                            IsVisible = true,
                             Name = "Dây Sạc",
                             Slug = "day-sac"
                         });

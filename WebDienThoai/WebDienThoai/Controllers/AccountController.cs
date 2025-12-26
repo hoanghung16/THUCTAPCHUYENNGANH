@@ -47,6 +47,7 @@ namespace WebDienThoai.Controllers
 
                 // --- LƯU SESSION---
                 HttpContext.Session.SetString("Username", user.Username);
+                HttpContext.Session.SetString("FullName", user.Fullname ?? "Khách hàng");
                 HttpContext.Session.SetString("Role", user.Role ?? "Customer"); 
 
                 // Điều hướng

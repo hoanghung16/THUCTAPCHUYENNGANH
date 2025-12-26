@@ -1,0 +1,133 @@
+﻿@model WebDienThoai.ViewModels.ContactInfoViewModel
+@{
+    ViewData["Title"] = "Liên Hệ";
+}
+
+<div class="page-header py-5 text-center mb-5" style="background-color: #333; color: white;">
+    <div class="container">
+        <h1 class="display-5 fw-bold text-uppercase mb-2" style="color: var(--accent-color-1, #CDBEA7);">Liên Hệ Với Chúng Tôi</h1>
+        <p class="lead mb-0 text-white-50">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn</p>
+    </div>
+</div>
+
+<div class="container pb-5">
+    <div class="row g-5">
+
+        <div class="col-lg-5">
+            <div class="p-4 bg-white shadow-sm rounded h-100 border" style="border-color: #eee;">
+                <h3 class="text-uppercase fw-bold mb-4 border-bottom pb-3" style="color: #333; font-size: 1.25rem;">
+                    Thông tin kết nối
+                </h3>
+
+                <div class="d-flex mb-4 align-items-start">
+                    <div class="flex-shrink-0">
+                        <div class="icon-box rounded-circle d-flex align-items-center justify-content-center"
+                             style="width: 50px; height: 50px; background-color: #f8f9fa;">
+                            <i class="bi bi-geo-alt-fill fs-4" style="color: var(--accent-color-1, #CDBEA7);"></i>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="fw-bold mb-1 text-uppercase small text-muted">Địa chỉ cửa hàng</h6>
+                        <p class="mb-0 fw-semibold text-dark">@Model.Address</p>
+                    </div>
+                </div>
+
+                <div class="d-flex mb-4 align-items-start">
+                    <div class="flex-shrink-0">
+                        <div class="icon-box rounded-circle d-flex align-items-center justify-content-center"
+                             style="width: 50px; height: 50px; background-color: #f8f9fa;">
+                            <i class="bi bi-telephone-fill fs-4" style="color: var(--accent-color-1, #CDBEA7);"></i>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="fw-bold mb-1 text-uppercase small text-muted">Hotline hỗ trợ</h6>
+                        <p class="mb-1">
+                            <a href="tel:@Model.Hotline" class="text-decoration-none fw-bold fs-5 text-dark hover-gold">@Model.Hotline</a>
+                        </p>
+                        <small class="text-success fw-bold"><i class="bi bi-clock me-1"></i> 8:00 - 22:00 (Hàng ngày)</small>
+                    </div>
+                </div>
+
+                <div class="d-flex mb-4 align-items-start">
+                    <div class="flex-shrink-0">
+                        <div class="icon-box rounded-circle d-flex align-items-center justify-content-center"
+                             style="width: 50px; height: 50px; background-color: #f8f9fa;">
+                            <i class="bi bi-envelope-fill fs-4" style="color: var(--accent-color-1, #CDBEA7);"></i>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="fw-bold mb-1 text-uppercase small text-muted">Email liên hệ</h6>
+                        <p class="mb-0">
+                            <a href="mailto:@Model.Email" class="text-decoration-none fw-semibold text-dark hover-gold">@Model.Email</a>
+                        </p>
+                    </div>
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model.Fanpage))
+                {
+                    <div class="mt-4 pt-4 border-top">
+                        <h6 class="fw-bold mb-3 text-uppercase small text-muted">Mạng xã hội</h6>
+                        <a href="@Model.Fanpage" target="_blank" class="btn btn-outline-dark rounded-pill px-4 fw-bold">
+                            <i class="bi bi-facebook me-2"></i>Fanpage The King
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="ps-lg-3">
+                <h3 class="text-uppercase fw-bold mb-4 pb-3 border-bottom" style="color: #333; font-size: 1.25rem;">
+                    Gửi thắc mắc cho chúng tôi
+                </h3>
+                <p class="text-muted mb-4">Nếu bạn có thắc mắc về đơn hàng, sản phẩm hoặc chính sách, vui lòng để lại tin nhắn bên dưới.</p>
+
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold small text-uppercase text-muted">Họ và tên</label>
+                        <input type="text" class="form-control py-3 bg-light border-0" placeholder="Nhập tên của bạn...">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold small text-uppercase text-muted">Email</label>
+                        <input type="email" class="form-control py-3 bg-light border-0" placeholder="email@example.com">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label fw-bold small text-uppercase text-muted">Số điện thoại</label>
+                        <input type="text" class="form-control py-3 bg-light border-0" placeholder="Nhập số điện thoại...">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label fw-bold small text-uppercase text-muted">Nội dung cần hỗ trợ</label>
+                        <textarea class="form-control py-3 bg-light border-0" rows="5" placeholder="Bạn cần hỗ trợ gì?"></textarea>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <button type="button" class="btn btn-dark w-100 py-3 fw-bold text-uppercase"
+                                style="background-color: #333; letter-spacing: 1px;"
+                                onclick="Swal.fire('Thành công!', 'Cảm ơn bạn! Chúng tôi đã nhận được tin nhắn.', 'success')">
+                            <i class="bi bi-send-fill me-2"></i> Gửi tin nhắn ngay
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5 pt-4">
+        <div class="rounded overflow-hidden shadow-sm border">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.424668581005!2d106.68767931533423!3d10.77874726210086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f28f4044ddd%3A0x48b88917406c3156!2sSaigon%20Centre!5e0!3m2!1sen!2s!4v1634567890123!5m2!1sen!2s"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hover-gold:hover {
+        color: var(--accent-color-1, #CDBEA7) !important;
+        transition: color 0.3s;
+    }
+
+    .form-control:focus {
+        box-shadow: none;
+        background-color: #fff !important;
+        border: 1px solid var(--accent-color-1, #CDBEA7) !important;
+    }
+</style>

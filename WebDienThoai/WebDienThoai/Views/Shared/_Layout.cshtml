@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="~/css/site.css">
 </head>
 <body>
+    @{
+        var username = HttpContextAccessor.HttpContext.Session.GetString("Username");
+        var fullName = HttpContextAccessor.HttpContext.Session.GetString("FullName");
+        var role = HttpContextAccessor.HttpContext.Session.GetString("Role");
+    }
 
     <header class="main-header">
         <div class="container d-flex align-items-center justify-content-between">
@@ -27,19 +32,13 @@
                     <a asp-controller="Home" asp-action="Index" class="text-dark text-decoration-none fw-semibold text-uppercase mx-3">Trang chủ</a>
                     <a asp-controller="Product" asp-action="Shop" class="text-dark text-decoration-none fw-semibold text-uppercase mx-3">Shop</a>
                     <a asp-controller="Product" asp-action="Sale" class="text-danger text-decoration-none fw-semibold text-uppercase mx-3">Sale</a>
-                    <a asp-controller="Home" asp-action="GioiThieu">Lịch Sử & Giới Thiệu</a>
+                    <a asp-controller="Home" asp-action="GioiThieu" class="text-dark text-decoration-none fw-semibold text-uppercase mx-3">Lịch Sử & Giới Thiệu</a>
+                    <a asp-controller="Home" asp-action="Contact" class="text-dark text-decoration-none fw-semibold text-uppercase mx-3">Liên hệ</a>
 
                     <span class="text-muted mx-2">|</span>
 
-                    @{
-                        var username = HttpContextAccessor.HttpContext.Session.GetString("Username");
-                        var fullName = HttpContextAccessor.HttpContext.Session.GetString("FullName");
-                        var role = HttpContextAccessor.HttpContext.Session.GetString("Role");
-                    }
-
                     @if (username != null)
                     {
-
                         @if (role == "Admin")
                         {
                             <a asp-area="Admin" asp-controller="Admin" asp-action="Dashboard" class="text-dark text-decoration-none fw-semibold mx-2">
@@ -55,10 +54,8 @@
                         <a href="#" id="logoutLink"
                            data-url="@Url.Action("Logout", "Account")"
                            class="text-dark text-decoration-none fw-semibold mx-2">
-                            
-                            👋 lOGOUT
+                            👋 LOGOUT
                         </a>
-                                        
                     }
                     else
                     {
@@ -73,8 +70,6 @@
                             </span>
                         </a>
                     }
-
-                    
                 </div>
             </nav>
         </div>
@@ -112,8 +107,7 @@
                 </div>
                 <div>
                     <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
-                    <p>Email: contact@webdienthoai.vn</p>
-                    <p>Hotline: 1900 5678</p>
+                    @await Component.InvokeAsync("FooterContact")
                 </div>
             </div>
             <div class="footer-bottom">
@@ -139,7 +133,6 @@
                 cancelButtonText: 'Để sau'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // Nếu bấm "Đăng nhập ngay" -> Chuyển hướng sang trang Login
                     window.location.href = '/Account/Login';
                 }
             });

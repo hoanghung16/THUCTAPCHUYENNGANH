@@ -19,6 +19,11 @@
         <input asp-for="Slug" class="form-control" placeholder="Tự động tạo nếu để trống" />
         <span asp-validation-for="Slug" class="text-danger"></span>
     </div>
+    <div class="mb-4 form-check form-switch">
+        <input class="form-check-input" type="checkbox" asp-for="IsVisible" id="IsVisibleSwitch">
+        <label class="form-check-label fw-bold" for="IsVisibleSwitch">Hiển thị trên trang bán hàng</label>
+        <div class="form-text">Nếu tắt, khách hàng sẽ không thấy danh mục này trên Menu và trang Shop.</div>
+    </div>
 
     <button type="submit" class="btn btn-primary me-2">Lưu lại</button>
     <a asp-action="Categories" class="btn btn-link text-decoration-none">Hủy bỏ</a>

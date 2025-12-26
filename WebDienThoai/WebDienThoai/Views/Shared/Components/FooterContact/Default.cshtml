@@ -1,0 +1,44 @@
+﻿@model WebDienThoai.ViewModels.ContactInfoViewModel
+
+<ul class="list-unstyled">
+    <li class="mb-3 d-flex align-items-start">
+        <i class="bi bi-geo-alt-fill me-2 flex-shrink-0" style="color: var(--accent-color-1);"></i>
+        <span>@Model.Address</span>
+    </li>
+
+    <li class="mb-3 d-flex align-items-center">
+        <i class="bi bi-telephone-fill me-2 flex-shrink-0" style="color: var(--accent-color-1);"></i>
+        <a href="tel:@Model.Hotline" class="text-decoration-none footer-link fw-bold">
+            @Model.Hotline
+        </a>
+    </li>
+
+    <li class="mb-3 d-flex align-items-center">
+        <i class="bi bi-envelope-fill me-2 flex-shrink-0" style="color: var(--accent-color-1);"></i>
+        <a href="mailto:@Model.Email" class="text-decoration-none footer-link">
+            @Model.Email
+        </a>
+    </li>
+
+    @if (!string.IsNullOrEmpty(Model.Fanpage))
+    {
+        <li class="mb-3 d-flex align-items-center">
+            <i class="bi bi-facebook me-2 flex-shrink-0" style="color: var(--accent-color-1);"></i>
+            <a href="@Model.Fanpage" target="_blank" class="text-decoration-none footer-link">
+                Fanpage The King
+            </a>
+        </li>
+    }
+</ul>
+
+<style>
+    .footer-link {
+        color: inherit; /* Kế thừa màu trắng xám của Footer */
+        transition: all 0.3s ease;
+    }
+
+        .footer-link:hover {
+            color: var(--accent-color-1) !important; /* Màu vàng cát khi di chuột */
+            padding-left: 5px; /* Hiệu ứng trượt nhẹ đồng bộ với site.css */
+        }
+</style>

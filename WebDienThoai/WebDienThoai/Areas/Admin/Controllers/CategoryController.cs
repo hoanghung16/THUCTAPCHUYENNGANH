@@ -89,5 +89,21 @@ namespace WebDienThoai.Areas.Admin.Controllers
             TempData["Success"] = "Đã xóa danh mục thành công!";
             return RedirectToAction(nameof(Categories));
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ToggleStatus(int id)
+        {
+            var category = await context.Categories.FindAsync(id);
+            if (category == null) return NotFound();
+
+            // Đảo ngược trạng thái (True -> False và ngược lại)
+            category.IsVisible = !category.IsVisible;
+
+            context.Update(category);
+            await context.SaveChangesAsync();
+
+            TempData["Success"] = $"Đã thay đổi trạng thái danh mục \"{category.Name}\" thành công!";
+            return RedirectToAction(nameof(Categories));
+        }
     }
 }

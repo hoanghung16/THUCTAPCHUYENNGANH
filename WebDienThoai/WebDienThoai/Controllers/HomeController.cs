@@ -2,21 +2,22 @@
 using Microsoft.EntityFrameworkCore;
 using WebDienThoai.Models;
 using WebDienThoai.ViewModels;
+using System.Text.Json; // [MỚI] Thư viện xử lý JSON
+using System.IO;        // [MỚI] Thư viện đọc file
 
 namespace WebDienThoai.Controllers
 {
-    public class HomeController(DatabaseTheKingContext context) : Controller
+    // [CẬP NHẬT] Thêm 'IWebHostEnvironment env' vào Constructor
+    public class HomeController(DatabaseTheKingContext context, IWebHostEnvironment env) : Controller
     {
         public async Task<IActionResult> Index()
         {
-            
             var allProducts = await context.Products
                                             .Include(p => p.Category)
-                                            .Where(p => p.IsPublished == true) 
+                                            .Where(p => p.IsPublished == true && p.Category.IsVisible == true)
                                             .AsNoTracking()
                                             .ToListAsync();
 
-            
             var bestSellers = allProducts
                                   .Where(p => p.Category.Name != "Phụ Kiện" &&
                                               p.Category.Name != "Tai Nghe" &&
@@ -39,6 +40,40 @@ namespace WebDienThoai.Controllers
         }
 
         
+        public IActionResult Contact()
+        {
+            
+            string filePath = Path.Combine(env.WebRootPath, "data", "contact.json");
+            ContactInfoViewModel model;
+
+            
+            if (System.IO.File.Exists(filePath))
+            {
+                string jsonContent = System.IO.File.ReadAllText(filePath);
+                try
+                {
+                    model = JsonSerializer.Deserialize<ContactInfoViewModel>(jsonContent);
+                }
+                catch
+                {
+                    model = new ContactInfoViewModel();
+                }
+            }
+            else
+            {
+               
+                model = new ContactInfoViewModel
+                {
+                    Address = "Đang cập nhật...",
+                    Hotline = "1900 xxxx",
+                    Email = "contact@theking.vn"
+                };
+            }
+
+            return View(model);
+        }
+
+        // Các Action tĩnh khác
         public IActionResult GioiThieu() => View();
         public IActionResult HeThongCuaHang() => View();
         public IActionResult TuyenDung() => View();

@@ -11,6 +11,6 @@ public partial class Category
     public string Name { get; set; } = null!;
 
     public string? Slug { get; set; }
-
+    public bool IsVisible { get; set; } = true;
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 }

@@ -32,8 +32,8 @@
                 <tr>
                     <th>ID</th>
                     <th>Tên Danh Mục</th>
-                    <th>Slug (Đường dẫn)</th>
-                    <th class="text-center">Số lượng sản phẩm</th>
+                    <th>Trạng thái</th>
+                    <th class="text-center">Số lượng SP</th>
                     <th class="text-end">Hành động</th>
                 </tr>
             </thead>
@@ -44,22 +44,36 @@
                     {
                         <tr>
                             <td>@category.Id</td>
-                            <td><strong>@category.Name</strong></td>
                             <td>
-                                <span class="badge bg-light text-dark border">
-                                    /danh-muc/@category.Slug
-                                </span>
+                                <strong>@category.Name</strong>
+                                <div class="small text-muted">/danh-muc/@category.Slug</div>
+                            </td>
+                            <td>
+                                <form asp-action="ToggleStatus" asp-route-id="@category.Id" method="post" style="display:inline;">
+                                    <button type="submit" class="btn btn-sm border-0 bg-transparent p-0" title="Bấm để đổi trạng thái">
+                                        @if (category.IsVisible)
+                                        {
+                                            <span class="badge bg-success"><i class="bi bi-eye-fill"></i> Đang hiện</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary"><i class="bi bi-eye-slash-fill"></i> Đang ẩn</span>
+                                        }
+                                    </button>
+                                </form>
                             </td>
                             <td class="text-center">
-                               
-                                @(category.Products != null ? category.Products.Count : 0)
+                                <span class="badge bg-light text-dark border">
+                                    @(category.Products?.Count ?? 0)
+                                </span>
                             </td>
                             <td class="text-end">
                                 <a asp-action="Edit" asp-route-id="@category.Id" class="btn btn-sm btn-outline-primary">
-                                    <i class="bi bi-pencil-square"></i> Sửa
+                                    <i class="bi bi-pencil-square"></i>
                                 </a>
-                                <a asp-action="Delete" asp-route-id="@category.Id" class="btn btn-sm btn-outline-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa danh mục này?');">
-                                    <i class="bi bi-trash"></i> Xóa
+                                <a asp-action="Delete" asp-route-id="@category.Id" class="btn btn-sm btn-outline-danger"
+                                   onclick="return confirm('Bạn có chắc chắn muốn xóa?');">
+                                    <i class="bi bi-trash"></i>
                                 </a>
                             </td>
                         </tr>

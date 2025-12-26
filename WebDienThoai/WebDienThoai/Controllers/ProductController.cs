@@ -7,34 +7,27 @@ namespace WebDienThoai.Controllers
 {
     public class ProductController(DatabaseTheKingContext context) : Controller
     {
-        
+        // 1. TRANG CỬA HÀNG (SHOP)
         public async Task<IActionResult> Shop(int page = 1, string categorySlug = "all", string priceRange = "all", string sort = "default")
         {
-            int pageSize = 9; 
+            int pageSize = 9;
 
-          
+            
             var query = context.Products
                 .Include(p => p.Category)
-                .Where(p => p.IsPublished == true)
+                .Where(p => p.IsPublished == true && p.Category.IsVisible == true)
                 .AsQueryable();
 
-          
-
-           
+            
             if (!string.IsNullOrEmpty(categorySlug) && categorySlug != "all")
             {
-               
                 if (categorySlug == "phu-kien" || categorySlug == "Phụ Kiện")
                 {
-                   
                     string[] phoneBrands = { "Apple", "Samsung", "Xiaomi", "Oppo", "Realme", "Vivo", "Iphone", "Sony", "Nokia", "Asus" };
-
-                   
                     query = query.Where(p => !phoneBrands.Contains(p.Category.Name));
                 }
                 else
                 {
-                   
                     query = query.Where(p => p.Category.Slug == categorySlug || p.Category.Name == categorySlug);
                 }
             }
@@ -70,31 +63,28 @@ namespace WebDienThoai.Controllers
                 case "name_asc":
                     query = query.OrderBy(p => p.Name);
                     break;
-                default: 
+                default:
                     query = query.OrderByDescending(p => p.Id);
                     break;
             }
 
-          
-
-           
+            // --- Phân trang ---
             int totalItems = await query.CountAsync();
             int totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
 
-            // Xử lý trang hợp lệ
             if (page < 1) page = 1;
             if (page > totalPages && totalPages > 0) page = totalPages;
 
-            // Lấy dữ liệu sản phẩm 
             var products = await query
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            // Lấy danh mục cho Sidebar 
-            var categories = await context.Categories.ToListAsync();
-
            
+            var categories = await context.Categories
+                .Where(c => c.IsVisible == true)
+                .Include(c => c.Products).ToListAsync();
+
             var viewModel = new ShopViewModel
             {
                 Products = products,
@@ -112,28 +102,26 @@ namespace WebDienThoai.Controllers
         // 2. CHI TIẾT SẢN PHẨM
         public async Task<IActionResult> Detail(int id)
         {
-           
+            
             var product = await context.Products
                 .Include(p => p.Category)
-                .FirstOrDefaultAsync(m => m.Id == id && m.IsPublished == true);
+                .FirstOrDefaultAsync(m => m.Id == id && m.IsPublished == true && m.Category.IsVisible == true);
 
             if (product == null) return NotFound();
 
-           
+            
             var relatedProducts = await context.Products
                 .Where(p => p.Category.Id == product.Category.Id && p.Id != id && p.IsPublished == true)
-                .OrderBy(r => Guid.NewGuid()) 
-                .Take(4) 
+                .OrderBy(r => Guid.NewGuid())
+                .Take(4)
                 .ToListAsync();
 
-            
             ViewBag.RelatedProducts = relatedProducts;
 
             return View(product);
         }
 
         // 3. CÁC ACTION REDIRECT 
-
         public IActionResult Category(string categoryName)
         {
             return RedirectToAction("Shop", new { categorySlug = categoryName });
@@ -141,17 +129,15 @@ namespace WebDienThoai.Controllers
 
         public IActionResult Accessories()
         {
-           
             return RedirectToAction("Shop", new { categorySlug = "phu-kien" });
         }
 
         public async Task<IActionResult> Sale()
         {
             
-            
             var saleProducts = await context.Products
                 .Include(p => p.Category)
-                .Where(p => p.IsPublished == true && p.IsOnSale == true)
+                .Where(p => p.IsPublished == true && p.IsOnSale == true && p.Category.IsVisible == true)
                 .ToListAsync();
 
             ViewData["Title"] = "Sản phẩm Khuyến Mãi";
