@@ -90,7 +90,7 @@
                     {
                         @foreach (var product in Model.Products)
                         {
-                            /* --- SỬA Ở ĐÂY: XÓA style="opacity:0" ĐỂ LUÔN HIỆN --- */
+                            
                             <div class="product-card h-100 d-flex flex-column" style="background: #fff; border-radius: 8px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #eee;">
                                 <a asp-controller="Product" asp-action="Detail" asp-route-id="@product.Id" class="d-block text-center mb-3">
                                     <img src="@product.ImageUrl" alt="@product.Name" style="height: 200px; width: 100%; object-fit: contain;">

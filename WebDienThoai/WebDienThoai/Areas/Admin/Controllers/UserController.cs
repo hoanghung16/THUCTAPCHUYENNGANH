@@ -15,23 +15,47 @@ namespace WebDienThoai.Areas.Admin.Controllers
             return View(users);
         }
 
-      
+
         public async Task<IActionResult> Delete(int id)
         {
-            var user = await context.Users.FindAsync(id);
+           
+            var user = await context.Users
+                                    .Include(u => u.Orders)
+                                    .FirstOrDefaultAsync(u => u.Id == id);
+
             if (user != null)
             {
-                
+               
                 if (user.Role == "Admin")
                 {
                     TempData["Error"] = "Không thể xóa tài khoản Admin!";
                 }
+                
+                else if (user.Orders.Any())
+                {
+                    TempData["Error"] = $"Không thể xoá thành viên {user.Username} vì họ đã có lịch sử mua hàng.";
+                }
+             
                 else
                 {
-                    context.Users.Remove(user);
-                    await context.SaveChangesAsync();
+                    try
+                    {
+                        context.Users.Remove(user);
+                        await context.SaveChangesAsync();
+                        TempData["Success"] = "Đã xóa người dùng thành công!";
+                    }
+                    catch (Exception ex)
+                    {
+                        
+                        TempData["Error"] = "Lỗi hệ thống: Không thể xoá người dùng này.";
+                    }
                 }
             }
+            else
+            {
+                TempData["Error"] = "Người dùng không tồn tại!";
+            }
+
             return RedirectToAction(nameof(Users));
         }
         public async Task<IActionResult> ApproveUser(int id)
@@ -42,8 +66,10 @@ namespace WebDienThoai.Areas.Admin.Controllers
                 
                 user.Role = "Admin";
                 await context.SaveChangesAsync();
+                TempData["Success"] = $"Đã duyệt thành viên {user.Username} lên làm Admin!";
             }
             return RedirectToAction("Users"); 
         }
+       
     }
 }

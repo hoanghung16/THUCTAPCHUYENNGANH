@@ -76,7 +76,7 @@ namespace WebDienThoai.Areas.Admin.Controllers
             return View(product);
         }
 
-        // 5. CHỈNH SỬA (POST) - CÓ XÓA ẢNH CŨ
+        // 5. CHỈNH SỬA (POST)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Product product, IFormFile? imageFile)
@@ -134,13 +134,13 @@ namespace WebDienThoai.Areas.Admin.Controllers
             return View(product);
         }
 
-        // 6. XÓA (DELETE) - CÓ XÓA ẢNH TRÊN SERVER
+        // XÓA (DELETE)
         public async Task<IActionResult> Delete(int id)
         {
             var product = await context.Products.FindAsync(id);
             if (product != null)
             {
-                // Xóa file ảnh vật lý
+               
                 if (!string.IsNullOrEmpty(product.ImageUrl))
                 {
                     string filePath = Path.Combine(webHostEnvironment.WebRootPath, product.ImageUrl.TrimStart('/'));

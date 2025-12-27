@@ -51,12 +51,19 @@
                             </td>
 
                             <td class="text-end fw-bold">@order.Totalprice.ToString("N0")đ</td>
-
                             <td class="text-end">
                                 <a asp-action="Details" asp-route-id="@order.Id" class="btn btn-sm btn-outline-primary">
                                     <i class="bi bi-eye"></i> Xem
                                 </a>
+
+                                <a asp-action="Delete"
+                                   asp-route-id="@order.Id"
+                                   class="btn btn-sm btn-outline-danger ms-1"
+                                   onclick="return confirm('Bạn có chắc chắn muốn xoá đơn hàng #@order.Id này không?');">
+                                    <i class="bi bi-trash"></i> Xoá
+                                </a>
                             </td>
+                           
                         </tr>
                     }
                 }

@@ -53,5 +53,25 @@ namespace WebDienThoai.Areas.Admin.Controllers
             }
             return RedirectToAction(nameof(Details), new { id = id });
         }
+        public async Task<IActionResult> DeleteOrder(int id)
+        {
+            var order = await context.Orders
+                                      .Include(o => o.OrderItems)
+                                      .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (order != null)
+            {
+               
+                if (order.OrderItems.Any())
+                {
+                    context.OrderItems.RemoveRange(order.OrderItems);
+                }
+
+               
+                context.Orders.Remove(order);
+                await context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(Orders));
+        }
     }
 }

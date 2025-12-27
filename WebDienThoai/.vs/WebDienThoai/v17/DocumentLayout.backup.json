@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\ChuyenNganh\\WebDienThoai\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|d:\\chuyennganh\\webdienthoai\\webdienthoai\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A36F44A5-CD3F-45CC-8442-93BBB7640C37}|WebDienThoai\\WebDienThoai.csproj|solutionrelative:webdienthoai\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_AdminLayout.cshtml",
-              "DocumentMoniker": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeDocumentMoniker": "WebDienThoai\\Views\\Shared\\_AdminLayout.cshtml",
-              "ToolTip": "D:\\ChuyenNganh\\WebDienThoai\\WebDienThoai\\Views\\Shared\\_AdminLayout.cshtml*",
-              "RelativeToolTip": "WebDienThoai\\Views\\Shared\\_AdminLayout.cshtml*",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEIAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-27T04:46:48.229Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
