@@ -111,7 +111,52 @@ namespace WebDienThoai.Controllers
         {
             return View();
         }
+        // --- XEM THÔNG TIN CÁ NHÂN ---
+        public async Task<IActionResult> Profile()
+        {
+            var username = HttpContext.Session.GetString("Username");
+            if (username == null) return RedirectToAction("Login");
 
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+            if (user == null) return RedirectToAction("Logout");
+
+            return View(user);
+        }
+
+        // ---  ĐỔI MẬT KHẨU (GET - Hiển thị form) ---
+        public IActionResult ChangePassword()
+        {
+            if (HttpContext.Session.GetString("Username") == null) return RedirectToAction("Login");
+            return View();
+        }
+
+        // ---  ĐỔI MẬT KHẨU (POST - Xử lý) ---
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            var username = HttpContext.Session.GetString("Username");
+            if (username == null) return RedirectToAction("Login");
+
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+
+            // Kiểm tra mật khẩu cũ
+            string currentHash = HashPassword(model.CurrentPassword);
+            if (user.Passwordhash != currentHash)
+            {
+                ModelState.AddModelError("CurrentPassword", "Mật khẩu hiện tại không đúng.");
+                return View(model);
+            }
+
+            // Cập nhật mật khẩu mới
+            user.Passwordhash = HashPassword(model.NewPassword);
+            _context.Update(user);
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Đổi mật khẩu thành công!";
+            return RedirectToAction("Profile");
+        }
         private string HashPassword(string password)
         {
             if (string.IsNullOrEmpty(password)) return string.Empty;

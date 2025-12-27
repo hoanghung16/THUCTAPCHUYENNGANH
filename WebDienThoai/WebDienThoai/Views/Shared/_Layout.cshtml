@@ -39,35 +39,68 @@
 
                     @if (username != null)
                     {
+                        /* ---QUẢN TRỊ--- */
                         @if (role == "Admin")
                         {
-                            <a asp-area="Admin" asp-controller="Admin" asp-action="Dashboard" class="text-dark text-decoration-none fw-semibold mx-2">
-                                Quản trị
+                            <a asp-area="Admin" asp-controller="Admin" asp-action="Dashboard"
+                               class="btn btn-sm btn-outline-danger fw-bold text-uppercase ms-3" title="Vào trang quản trị">
+                                <i class="bi bi-shield-lock-fill"></i> Admin
                             </a>
                         }
-                        <a asp-controller="Cart" asp-action="Index" class="text-dark text-decoration-none fw-semibold mx-3 position-relative">
-                            🛒 Giỏ Hàng
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">
+
+                        /* --- GIỎ HÀNG --- */
+                        <a asp-controller="Cart" asp-action="Index" class="position-relative text-dark ms-3" title="Giỏ hàng">
+                            <i class="bi bi-cart3 fs-4"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.5rem;">
                                 !
                             </span>
                         </a>
-                        <a href="#" id="logoutLink"
-                           data-url="@Url.Action("Logout", "Account")"
-                           class="text-dark text-decoration-none fw-semibold mx-2">
-                            👋 LOGOUT
-                        </a>
+
+                        /* ---TÀI KHOẢN  --- */
+                        <div class="dropdown d-inline-block ms-3">
+                            <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle"
+                               id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="rounded-circle bg-dark text-white d-flex align-items-center justify-content-center me-2"
+                                     style="width: 32px; height: 32px; font-size: 14px;">
+                                    @fullName.Substring(0, 1).ToUpper()
+                                </div>
+                                <span class="fw-semibold text-uppercase small d-none d-md-block" style="max-width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                    @fullName
+                                </span>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 p-2" aria-labelledby="userDropdown" style="min-width: 200px;">
+                                <li><h6 class="dropdown-header text-muted">Xin chào, @fullName</h6></li>
+                                <li>
+                                    <a class="dropdown-item rounded py-2" asp-controller="Account" asp-action="Profile">
+                                        <i class="bi bi-person-vcard me-2 text-warning"></i> Hồ sơ của tôi
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item rounded py-2" asp-controller="Account" asp-action="ChangePassword">
+                                        <i class="bi bi-shield-lock me-2 text-warning"></i> Đổi mật khẩu
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <a class="dropdown-item rounded py-2 text-danger fw-bold" href="#" id="logoutLink"
+                                       data-url="@Url.Action("Logout", "Account")">
+                                        <i class="bi bi-box-arrow-right me-2"></i> Đăng xuất
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     }
                     else
                     {
-                        <a asp-controller="Account" asp-action="Login" class="text-dark text-decoration-none fw-semibold mx-3">
-                            👤 Đăng nhập
+                        /* --- CHƯA ĐĂNG NHẬP --- */
+                        <a asp-controller="Account" asp-action="Login" class="text-dark fw-bold text-uppercase ms-3 text-decoration-none" style="font-size: 14px;">
+                            <i class="bi bi-person me-1"></i> Đăng nhập
                         </a>
 
-                        <a href="javascript:void(0);" onclick="requireLogin()" class="text-dark text-decoration-none fw-semibold mx-3 position-relative">
-                            🛒 Giỏ Hàng
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary" style="font-size: 0.6rem;">
-                                0
-                            </span>
+                        <a href="javascript:void(0);" onclick="requireLogin()" class="position-relative text-dark ms-3">
+                            <i class="bi bi-cart3 fs-4"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary" style="font-size: 0.5rem;">0</span>
                         </a>
                     }
                 </div>

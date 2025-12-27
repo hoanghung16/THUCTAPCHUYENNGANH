@@ -1,0 +1,52 @@
+﻿@model WebDienThoai.Models.User
+@{
+    ViewData["Title"] = "Hồ sơ cá nhân";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-dark text-white py-3">
+                    <h4 class="mb-0 text-uppercase" style="color: var(--accent-color-1);">Hồ sơ của tôi</h4>
+                </div>
+                <div class="card-body p-4">
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+                    }
+
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 80px; height: 80px;">
+                            <i class="bi bi-person-fill fs-1 text-secondary"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1">@Model.Fullname</h5>
+                            <span class="badge bg-warning text-dark">Thành viên</span>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="small text-muted text-uppercase fw-bold">Tên đăng nhập</label>
+                            <p class="form-control-plaintext border-bottom">@Model.Username</p>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small text-muted text-uppercase fw-bold">Email</label>
+                            <p class="form-control-plaintext border-bottom">@Model.Email</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 d-flex gap-2">
+                        <a asp-action="ChangePassword" class="btn btn-outline-dark">
+                            <i class="bi bi-key"></i> Đổi mật khẩu
+                        </a>
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-dark">
+                            Về trang chủ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
