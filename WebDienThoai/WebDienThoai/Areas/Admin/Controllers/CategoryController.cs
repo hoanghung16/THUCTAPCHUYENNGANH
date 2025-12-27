@@ -75,7 +75,7 @@ namespace WebDienThoai.Areas.Admin.Controllers
             var category = await context.Categories.FindAsync(id);
             if (category == null) return NotFound();
 
-            // KIỂM TRA QUAN TRỌNG: Nếu danh mục có sản phẩm thì chặn xóa
+            
             var hasProduct = await context.Products.AnyAsync(p => p.Categoryid == id);
             if (hasProduct)
             {
@@ -96,7 +96,7 @@ namespace WebDienThoai.Areas.Admin.Controllers
             var category = await context.Categories.FindAsync(id);
             if (category == null) return NotFound();
 
-            // Đảo ngược trạng thái (True -> False và ngược lại)
+            
             category.IsVisible = !category.IsVisible;
 
             context.Update(category);

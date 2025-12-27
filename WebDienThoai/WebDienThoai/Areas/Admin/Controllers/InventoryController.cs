@@ -12,7 +12,7 @@ namespace WebDienThoai.Areas.Admin.Controllers
         // 1. DANH SÁCH TỒN KHO
         public async Task<IActionResult> Inventory()
         {
-            // Lấy tất cả sản phẩm, kèm thông tin kho
+            
             var products = await context.Products
                 .Include(p => p.Inventory)
                 .OrderBy(p => p.Name)
@@ -29,7 +29,7 @@ namespace WebDienThoai.Areas.Admin.Controllers
 
             if (product == null) return NotFound();
 
-            // Nếu chưa có dòng inventory nào, tạo object ảo để hiển thị
+           
             var inventory = product.Inventory ?? new Inventory { ProductId = id, QuantityInStock = 0 };
 
            

@@ -32,7 +32,7 @@ namespace WebDienThoai.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Product product, IFormFile? imageFile)
         {
-            // Bỏ qua validate các bảng liên kết
+            
             ModelState.Remove("Category");
             ModelState.Remove("Inventory");
             ModelState.Remove("OrderItems");
@@ -41,11 +41,11 @@ namespace WebDienThoai.Areas.Admin.Controllers
             {
                 if (imageFile != null)
                 {
-                    // TẠO TÊN FILE AN TOÀN (GUID + Đuôi file gốc)
+                    
                     string extension = Path.GetExtension(imageFile.FileName);
                     string uniqueFileName = Guid.NewGuid().ToString() + extension;
 
-                    // Đảm bảo thư mục tồn tại
+                  
                     string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "img");
                     if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
 
@@ -91,19 +91,19 @@ namespace WebDienThoai.Areas.Admin.Controllers
             {
                 try
                 {
-                    // Lấy thông tin cũ để xử lý ảnh
+                    
                     var existingProduct = await context.Products.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
 
                     if (imageFile != null)
                     {
-                        // 1. Xóa ảnh cũ nếu có
+                        
                         if (existingProduct != null && !string.IsNullOrEmpty(existingProduct.ImageUrl))
                         {
                             string oldFilePath = Path.Combine(webHostEnvironment.WebRootPath, existingProduct.ImageUrl.TrimStart('/'));
                             if (System.IO.File.Exists(oldFilePath)) System.IO.File.Delete(oldFilePath);
                         }
 
-                        // 2. Upload ảnh mới
+                       
                         string uniqueFileName = Guid.NewGuid().ToString() + "_" + imageFile.FileName;
                         string filePath = Path.Combine(webHostEnvironment.WebRootPath, "img", uniqueFileName);
 
@@ -115,7 +115,7 @@ namespace WebDienThoai.Areas.Admin.Controllers
                     }
                     else
                     {
-                        // Không chọn ảnh mới -> Giữ nguyên ảnh cũ
+                        
                         if (existingProduct != null) product.ImageUrl = existingProduct.ImageUrl;
                     }
 

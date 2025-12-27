@@ -13,8 +13,8 @@ namespace WebDienThoai.Areas.Admin.Controllers
         public async Task<IActionResult> Orders()
         {
             var orders = await context.Orders
-                .Include(o => o.User) // Lấy thông tin người đặt
-                .OrderByDescending(o => o.Orderdate) // Mới nhất lên đầu
+                .Include(o => o.User) 
+                .OrderByDescending(o => o.Orderdate) 
                 .ToListAsync();
             return View(orders);
         }
@@ -25,7 +25,7 @@ namespace WebDienThoai.Areas.Admin.Controllers
             var order = await context.Orders
                 .Include(o => o.User)
                 .Include(o => o.OrderItems)
-                    .ThenInclude(oi => oi.Product) // Lấy thông tin sản phẩm trong đơn
+                    .ThenInclude(oi => oi.Product) 
                 .FirstOrDefaultAsync(o => o.Id == id);
 
             if (order == null) return NotFound();
